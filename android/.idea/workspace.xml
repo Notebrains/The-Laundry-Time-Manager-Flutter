@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="248651aa-47dd-41ef-88b7-ce6ab17f0c05" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.flutter-plugins" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle_______build_app_intermediates_flutter_debug_libs_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_browser_browser_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_java8_2_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_api_2_2_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_backend_cct_2_3_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_datatransport_transport_runtime_2_2_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_6_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_cloud_messaging_16_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_18_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_18_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_18_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_impl_18_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_18_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_18_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_errorprone_error_prone_annotations_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_18_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_ktx_18_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_annotations_16_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_19_5_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_ktx_19_5_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_components_16_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_datatransport_17_0_10_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_encoders_16_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_encoders_json_17_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_21_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_16_3_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_interop_16_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_18_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_messaging_21_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_failureaccess_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_28_1_android.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_j2objc_j2objc_annotations_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_threetenabp_threetenabp_1_2_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_arm64_v8a_debug_1_0_0_5d8bf811b3072390933d69f3e289a4bb673636c4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_armeabi_v7a_debug_1_0_0_5d8bf811b3072390933d69f3e289a4bb673636c4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_flutter_embedding_debug_1_0_0_5d8bf811b3072390933d69f3e289a4bb673636c4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_x86_64_debug_1_0_0_5d8bf811b3072390933d69f3e289a4bb673636c4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_x86_debug_1_0_0_5d8bf811b3072390933d69f3e289a4bb673636c4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_checkerframework_checker_compat_qual_2_5_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_codehaus_mojo_animal_sniffer_annotations_1_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_72.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_72.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_72.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_threeten_threetenbp_1_4_2_no_tzdb.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/-2066323532/android.firebase_messaging.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/-648144744/android.connectivity.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/-915332800/android.shared_preferences.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/1343039617/android.path_provider.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/1929066065/android.flutter_local_notifications.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/2051069644/android.firebase_core.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/574125971/android.sqflite.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/android.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/gifs/animated-bubbles.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/gifs/bubble.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/gifs/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/gifs/loading_line.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/gifs/loading_text.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/beer-bubbles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/bg-bubles-dens.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/bubbles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/empty_search_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/laundry-illustration-animation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/loading-dots.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/lottie-empty.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/lottie-image-loading-improved.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/lottie_image_loading.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/sad-empty-box.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/animations/lottiefiles/washer-riding.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/fonts/Roboto.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/png/car_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/png/circle-avator-default-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/png/laundry-tshirt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/png/share.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/png/short-pants-white.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/address.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/bulk-delivery-truck.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/delivery-box.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/delivery-truck.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/house.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/location.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/shipped.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/taxi-driver.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/icons/svg/user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/images/Logotlt-Square-Blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/images/app_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/images/bg-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/images/img_error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/images/img_no_connection.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../assets/images/logo_without_border.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Podfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/120.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/152.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/167.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ios/Runner/GoogleService-Info.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/extn_fun/base_app_fun.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/extn_fun/check_network_connection.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/extn_fun/common_fun.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/extn_fun/validation.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/avatar_glow.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/blurry_container.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/bottom_nav_bar/ff_navigation_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/bottom_nav_bar/ff_navigation_bar_item.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/bottom_nav_bar/ff_navigation_bar_theme.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/dashed_line.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/delayed_display.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/edge_alert.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/flutter_toast.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/liquid_pull_to_refresh/circular_progress.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/liquid_pull_to_refresh/clipper.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/liquid_pull_to_refresh/liquid_pull_to_refresh.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/multi_select_item_list.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/otp_field.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/libraries/star_rating.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/helper/shared_preference_data.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/models/shared_pref_address_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/models/shared_pref_user_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/exports/helpers.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/exports/screens.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/exports/styles.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/exports/widgets.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/screens/forgot_password.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/screens/home.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/screens/login.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/screens/premium_pickup.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/screens/request.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/screens/settings.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/screens/splash.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/styles/responsive_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/styles/size_config.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/styles/strings.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/styles/themes.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/styles/txt_styles.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/app_bar_back_custom.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/app_bar_more_op.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/appbar_common.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/appbar_hambarger.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/appbar_ic_back.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/appbar_scrollable_tapbar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/bottom_sheet_item_details_ui.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_blue_bg.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_boder_white.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_buble.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_bulk_order_banner_img.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_circle_ic.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_full_width.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_full_width_blue_bg.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_ic_txt_ic_white_bg.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/btn_sq_white.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/button_sq_ic.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/cached_net_img.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/cached_net_img_radius.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/create_drawer_body_item.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/create_drawer_header.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/custom_app_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/dialog_bulk_order_pickup_update.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/dialog_premium_pickup_collected.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/dialog_update_payment.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/divider_txt_center.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/elevated_icon.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/empty_data.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/ic_if_ic.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/ic_txt_btn_column.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/list_data_bo_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/list_data_premium_drop_off_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/list_data_premium_oick_up_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/lottie_buble.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/multi_select_dialog.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/navigation_drawer.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/no_data_found.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/no_data_found_ic_txt.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/no_data_txt.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/numeric_step_btn_horizon.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/numeric_step_btn_vertical.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/order_status_img_txt.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/search_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/shadow_icon.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/show_snack_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/snack_bar_with_action_btn.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/something_wrong.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/text_field_map_address.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/text_inputfield_icon_round.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/tlt_progress_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/txt.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/txt_center.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/txt_grey_border.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/txt_ic_row.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/txt_ic_row_without_width.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/txt_input_field.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/txt_left_right_row.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/txt_txt_txt_row.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/ui/widgets/voucher_code_ui.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/api_bloc.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/api_constants.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/api_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/response_models/bulk_pick_up_res_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/response_models/home_category_res_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/response_models/login_res_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/response_models/premium_drop_off_res_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/response_models/premium_pick_up_res_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/response_models/static_offer_model_with_non_offer_item_details.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/response_models/status_msg_res_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/webservices/response_models/tutorial_res_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/The-Laundry-Time-Manager-Flutter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/The-Laundry-Time-Manager-Flutter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.packages" beforeDir="false" afterPath="$PROJECT_DIR$/../.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/com/tlt/tlt_manager/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/com/tlt/manager/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/profile/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Runner/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../test/widget_test.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[192.168.43.161:5555]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1s1KSNTzGg7waVrA3RPxQCegbdM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="dev.polek.adbwifi.settings.AdbWifiConfigurable" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="android.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="248651aa-47dd-41ef-88b7-ce6ab17f0c05" name="Default Changelist" comment="" />
+      <created>1620034654866</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620034654866</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="458" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620034930743">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1620034930743" />
+  </component>
+</project>

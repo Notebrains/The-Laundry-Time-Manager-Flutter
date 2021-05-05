@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "856129408041",
+    "project_id": "tlt-driver",
+    "storage_bucket": "tlt-driver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856129408041:android:f30febcdbe0ad0001d6038",
+        "android_client_info": {
+          "package_name": "com.tlt.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856129408041-r46p3vqpr9n63duolvqv6h18k3vhpdc8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tlt.driver",
+            "certificate_hash": "d53d917c39fd01bdd0c292cd90a7d81ba1396fa2"
+          }
+        },
+        {
+          "client_id": "856129408041-o2b9mdbl7fj7e6v37dqovs2vj500hct5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe3fWr0jhMHmtR2uxiOBCtUa0YGVbU55A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856129408041-o2b9mdbl7fj7e6v37dqovs2vj500hct5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "856129408041-qoilou4e0no3n8eh16uthmrqmub99i0q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tlt.drivers"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856129408041:android:7ed5cd0850136b9d1d6038",
+        "android_client_info": {
+          "package_name": "com.tlt.manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856129408041-if5le9gg2hd4t2j2ga5e3b1sdmc4s17d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tlt.manager",
+            "certificate_hash": "d53d917c39fd01bdd0c292cd90a7d81ba1396fa2"
+          }
+        },
+        {
+          "client_id": "856129408041-o2b9mdbl7fj7e6v37dqovs2vj500hct5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe3fWr0jhMHmtR2uxiOBCtUa0YGVbU55A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856129408041-o2b9mdbl7fj7e6v37dqovs2vj500hct5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "856129408041-qoilou4e0no3n8eh16uthmrqmub99i0q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tlt.drivers"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
