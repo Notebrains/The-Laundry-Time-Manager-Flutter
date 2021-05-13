@@ -9,6 +9,6 @@ Widget AppBarCommon (BuildContext context ,String text){
     brightness: Brightness.light,
     iconTheme: IconThemeData(
       color: AppTheme.selectedTabBackgroundColor),
-    title: Text(text, style: TextStyle(fontSize: 22 ,color: Colors.blueGrey, fontWeight: FontWeight.bold, fontFamily: 'Roboto'),),
+    title: Text(text, style: TextStyle(fontSize: 20 ,color: Colors.blueGrey, fontWeight: FontWeight.bold, fontFamily: 'Roboto'),),
   );
 }

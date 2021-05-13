@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/../../../../flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1/android" />
             <option value="$PROJECT_DIR$/../../../../flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.5/android" />
             <option value="$PROJECT_DIR$/../../../../flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+3/android" />
+            <option value="$PROJECT_DIR$/../../../../flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.3/android" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -1,6 +1,8 @@
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tlt_manager/helper/libraries/flutter_toast.dart';
+
 
 String getFirstWordFromText(String txt) {
   return (txt + " ").split(" ")[0]; //add " " to string to be sure there is something to split

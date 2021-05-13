@@ -5,7 +5,7 @@ Widget appBarIcBack (BuildContext context ,String text){
     centerTitle: true,
     elevation: 0,
     title: Text(
-      text, style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.normal, fontFamily: 'Roboto'),
+      text, style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Roboto'),
     ),
     backgroundColor: Colors.white,
     leading: GestureDetector(

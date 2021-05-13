@@ -8,6 +8,7 @@ class TxtTxtTxtRow extends StatelessWidget {
   final String text3;
   final Color text1Color;
   final Color text2Color;
+  final Color bgColor;
 
   const TxtTxtTxtRow({
     Key key,
@@ -16,6 +17,7 @@ class TxtTxtTxtRow extends StatelessWidget {
     @required this.text3,
     @required this.text1Color,
     @required this.text2Color,
+    @required this.bgColor,
   }) : super(key: key);
 
   @override
@@ -23,19 +25,19 @@ class TxtTxtTxtRow extends StatelessWidget {
 
     return SlideInLeft(
       child: Container(
-        color: Color(0xFFC0FFC5),
+        color: bgColor,
         padding: const EdgeInsets.all(10.0),
-        margin: const EdgeInsets.only(left: 16.0, right: 16, bottom: 12, top: 8),
+        margin: const EdgeInsets.only(left: 16.0, right: 16, top: 2),
 
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
               text1,
               textAlign: TextAlign.start,
               style:
-              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 14, color: text1Color),
+              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text1Color),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               softWrap: false,
@@ -45,7 +47,7 @@ class TxtTxtTxtRow extends StatelessWidget {
               text2,
               textAlign: TextAlign.start,
               style:
-              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 14, color: Colors.black87),
+              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text1Color),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               softWrap: false,
@@ -55,7 +57,7 @@ class TxtTxtTxtRow extends StatelessWidget {
               text3,
               textAlign: TextAlign.start,
               style:
-              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 14, color: text2Color),
+              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text2Color),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               softWrap: false,

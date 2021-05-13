@@ -1,14 +1,17 @@
 import 'dart:convert';
 import 'dart:async';
-import 'dart:math';
 import 'package:http/http.dart' show Client;
 import 'package:http/http.dart' as http;
 import 'package:tlt_manager/ui/exports/helpers.dart';
-import 'response_models/bulk_pick_up_res_model.dart';
-import 'response_models/home_category_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/customer_list_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/drop_off_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/offers_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/orders_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/pick_up_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/product_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/reviews_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/sales_res_model.dart';
 import 'response_models/login_res_model.dart';
-import 'response_models/premium_drop_off_res_model.dart';
-import 'response_models/premium_pick_up_res_model.dart';
 import 'response_models/status_msg_res_model.dart';
 
 class ApiProvider {
@@ -19,6 +22,29 @@ class ApiProvider {
     'auth_key': 'AKJUY8746474JGKGJ888FJFKDKD9999DKDNDFJ44',
     'user_id': 'TLT-2021-@#-01',
   };
+
+
+  // update_device_token
+  Future<StatusMsgResModel> fetchUpdateDeviceTokenApi(String managerId, String deviceToken) async {
+    var requestBody = {
+      'manager_id': managerId,
+      'device_token': deviceToken,
+    };
+
+    http.Response response = await http.post(
+      Uri.parse(UrlConstants.update_device_token),
+      headers: header,
+      body: requestBody,
+    );
+
+    print('----update_device_token res :  ${response.body.toString()}');
+
+    if (response.statusCode == 200) {
+      return StatusMsgResModel.fromJson(json.decode(response.body)); //Return decoded response
+    } else {
+      throw Exception('Failed to load update_device_token response');
+    }
+  }
 
   // login
   Future<LoginResModel> fetchLoginApi(String email, String password) async {
@@ -42,252 +68,177 @@ class ApiProvider {
     }
   }
 
-  // Request password
-  Future<StatusMsgResModel> fetchRequestPassApi(String email) async {
+
+  // customers_list
+  Future<CustomerListResModel> fetchCustomerListsApi() async {
+    http.Response response = await http.get(
+      Uri.parse(UrlConstants.customers_list),
+      headers: header,
+    );
+
+    print('----customers_list res :  ${response.body.toString()}');
+
+    if (response.statusCode == 200) {
+      return CustomerListResModel.fromJson(json.decode(response.body)); //Return decoded response
+    } else {
+      throw Exception('Failed to load customers_list response');
+    }
+  }
+
+  // delete_customer
+  Future<StatusMsgResModel> fetchDeleteCustomerApi(String customerId) async {
     var requestBody = {
-      'email': email,
+      'customer_id': customerId,
     };
 
     http.Response response = await http.post(
-      Uri.parse(UrlConstants.request_password),
+      Uri.parse(UrlConstants.delete_customer),
       headers: header,
       body: requestBody,
     );
 
-    print('----Request password res :  ${response.body.toString()}');
+    print('----delete customer res :  ${response.body.toString()}');
 
     if (response.statusCode == 200) {
       return StatusMsgResModel.fromJson(json.decode(response.body)); //Return decoded response
     } else {
-      throw Exception('Failed to load request password response');
+      throw Exception('Failed to load delete customer response');
+    }
+  }
+
+  // sales
+  Future<SalesResModel> fetchSalesApi() async {
+
+    http.Response response = await http.get(
+      Uri.parse(UrlConstants.sales),
+      headers: header,
+    );
+
+    print('----sales res :  ${response.body.toString()}');
+
+    if (response.statusCode == 200) {
+      return SalesResModel.fromJson(json.decode(response.body)); //Return decoded response
+    } else {
+      throw Exception('Failed to load sales response');
+    }
+  }
+
+  // reviews
+  Future<ReviewsResModel> fetchReviewApi() async {
+
+    http.Response response = await http.get(
+      Uri.parse(UrlConstants.reviews),
+      headers: header,
+    );
+
+    print('----reviews res :  ${response.body.toString()}');
+
+    if (response.statusCode == 200) {
+      return ReviewsResModel.fromJson(json.decode(response.body)); //Return decoded response
+    } else {
+      throw Exception('Failed to load reviews response');
+    }
+  }
+
+  // get_items
+  Future<ProductResModel> fetchItemsApi() async {
+
+    http.Response response = await http.get(
+      Uri.parse(UrlConstants.get_items),
+      headers: header,
+    );
+
+    print('----get_items res :  ${response.body.toString()}');
+
+    if (response.statusCode == 200) {
+      return ProductResModel.fromJson(json.decode(response.body)); //Return decoded response
+    } else {
+      throw Exception('Failed to load get_items response');
+    }
+  }
+
+  // Offers
+  Future<OffersResModel> fetchOffersApi() async {
+    http.Response response = await http.get(
+      Uri.parse(UrlConstants.offers_list),
+      headers: header,
+    );
+
+    print('----offers_list res :  ${response.body.toString()}');
+
+    if (response.statusCode == 200) {
+      return OffersResModel.fromJson(json.decode(response.body)); //Return decoded response
+    } else {
+      throw Exception('Failed to load offers_list response');
     }
   }
 
 
-  // premium_pickup_lists
-  Future<PremiumPickUpResModel> fetchPremiumPickupListsApi(String driverId) async {
+  // orders
+  Future<OrdersResModel> fetchOrdersApi(String fromDate, String toDate) async {
     var requestBody = {
-      'driver_id': driverId,
+      'from_date': fromDate,
+      'to_date': toDate,
     };
 
     http.Response response = await http.post(
-      Uri.parse(UrlConstants.premium_pickup_lists),
+      Uri.parse(UrlConstants.orders),
       headers: header,
       body: requestBody,
     );
 
-    print('----premium_pickup_lists res :  ${response.body.toString()}');
+    print('----orders res :  ${response.body.toString()}');
 
     if (response.statusCode == 200) {
-      return PremiumPickUpResModel.fromJson(json.decode(response.body)); //Return decoded response
+      return OrdersResModel.fromJson(json.decode(response.body)); //Return decoded response
     } else {
-      throw Exception('Failed to load premium_pickup_lists response');
-    }
-  }
-
-  // premium_delivery_lists
-  Future<PremiumDropOffResModel> fetchPremiumDeliveryListsApi(String driverId) async {
-    var requestBody = {
-      'driver_id': driverId,
-    };
-
-    http.Response response = await http.post(
-      Uri.parse(UrlConstants.premium_delivery_lists),
-      headers: header,
-      body: requestBody,
-    );
-
-    print('----premium_delivery_lists res :  ${response.body.toString()}');
-
-    if (response.statusCode == 200) {
-      return PremiumDropOffResModel.fromJson(json.decode(response.body)); //Return decoded response
-    } else {
-      throw Exception('Failed to load premium_delivery_lists response');
-    }
-  }
-
-  // bulk_pickup_lists
-  Future<BulkPickUpResModel> fetchBulkPickupListsApi(String driverId) async {
-    var requestBody = {
-      'driver_id': driverId,
-    };
-
-    http.Response response = await http.post(
-      Uri.parse(UrlConstants.bulk_pickup_lists),
-      headers: header,
-      body: requestBody,
-    );
-
-    print('----bulk_pickup_lists res :  ${response.body.toString()}');
-
-    if (response.statusCode == 200) {
-      return BulkPickUpResModel.fromJson(json.decode(response.body)); //Return decoded response
-    } else {
-      throw Exception('Failed to load bulk_pickup_lists response');
+      throw Exception('Failed to load orders response');
     }
   }
 
 
-  // bulk_delivery_lists
-  Future<BulkPickUpResModel> fetchBulkDeliveryListsApi(String driverId) async {
+  // pickup_lists
+  Future<PickUpResModel> fetchPickUpListsApi(String fromDate, String toDate,) async {
     var requestBody = {
-      'driver_id': driverId,
+      'from_date': fromDate,
+      'to_date': toDate,
     };
 
     http.Response response = await http.post(
-      Uri.parse(UrlConstants.bulk_pickup_lists),
+      Uri.parse(UrlConstants.pickup_lists),
       headers: header,
       body: requestBody,
     );
 
-    print('----bulk_delivery_lists res :  ${response.body.toString()}');
+    print('----pickup_lists res :  ${response.body.toString()}');
 
     if (response.statusCode == 200) {
-      return BulkPickUpResModel.fromJson(json.decode(response.body)); //Return decoded response
+      return PickUpResModel.fromJson(json.decode(response.body)); //Return decoded response
     } else {
-      throw Exception('Failed to load bulk_delivery_lists response');
+      throw Exception('Failed to load pickup_lists response');
     }
   }
 
 
-  // fetch Update Order Request Api
-  Future<StatusMsgResModel> fetchUpdateOrderRequestApi(String requestType, String driverId, String pickupStatus,
-      String deliveryStatus, String cancelReason) async {
+// drop off list
+  Future<DropOffResModel> fetchDropOffListsApi(String fromDate, String toDate,) async {
     var requestBody = {
-      'request_type': requestType,
-      'order_id': driverId,
-      'pickup_status': pickupStatus,
-      'delivery_status': deliveryStatus,
-      'cancel_reason': cancelReason,
+      'from_date': fromDate,
+      'to_date': toDate,
     };
 
     http.Response response = await http.post(
-      Uri.parse(UrlConstants.update_order_request),
+      Uri.parse(UrlConstants.dropoff_lists),
       headers: header,
       body: requestBody,
     );
 
-    print('----accept_pickup_request res :  ${response.body.toString()}');
+    print('----drop off_lists res :  ${response.body.toString()}');
 
     if (response.statusCode == 200) {
-      return StatusMsgResModel.fromJson(json.decode(response.body)); //Return decoded response
+      return DropOffResModel.fromJson(json.decode(response.body)); //Return decoded response
     } else {
-      throw Exception('Failed to load accept_pickup_request response');
-    }
-  }
-
-
-  // update_pickup_success
-  Future<StatusMsgResModel> fetchUpdatePickupSuccessApi(String orderId, String selectedItems) async {
-    var requestBody = {
-      'order_id': orderId,
-      'selected_items': selectedItems,
-    };
-
-    http.Response response = await http.post(
-      Uri.parse(UrlConstants.update_pickup_success),
-      headers: header,
-      body: requestBody,
-    );
-
-    print('----update_pickup_success res :  ${response.body.toString()}');
-
-    if (response.statusCode == 200) {
-      return StatusMsgResModel.fromJson(json.decode(response.body)); //Return decoded response
-    } else {
-      throw Exception('Failed to load update_pickup_success response');
-    }
-  }
-
-
-  // update_delivery_success
-  Future<StatusMsgResModel> fetchUpdateDeliverySuccessApi(String orderId) async {
-    var requestBody = {
-      'order_id': orderId
-    };
-
-    http.Response response = await http.post(
-      Uri.parse(UrlConstants.update_delivery_success),
-      headers: header,
-      body: requestBody,
-    );
-
-    print('----update_Delivery_success res :  ${response.body.toString()}');
-
-    if (response.statusCode == 200) {
-      return StatusMsgResModel.fromJson(json.decode(response.body)); //Return decoded response
-    } else {
-      throw Exception('Failed to load update_Delivery_success response');
-    }
-  }
-
-
-  // update_cod_payment
-  Future<StatusMsgResModel> fetchUpdateCodPaymentApi(String orderId, String receivedAmount, String paymentType) async {
-    var requestBody = {
-      'order_id': orderId,
-      'received_amount': receivedAmount,
-      'payment_type': paymentType,
-    };
-
-    http.Response response = await http.post(
-      Uri.parse(UrlConstants.update_cod_payment),
-      headers: header,
-      body: requestBody,
-    );
-
-    print('----update_cod_payment res :  ${response.body.toString()}');
-
-    if (response.statusCode == 200) {
-      return StatusMsgResModel.fromJson(json.decode(response.body)); //Return decoded response
-    } else {
-      throw Exception('Failed to load update_cod_payment response');
-    }
-  }
-
-
-  // update_bulk_weight
-  Future<StatusMsgResModel> fetchUpdateBulkWeightApi(String orderId, String bulkWeight) async {
-    var requestBody = {
-      'order_id': orderId,
-      'bulk_weight': bulkWeight,
-    };
-
-    http.Response response = await http.post(
-      Uri.parse(UrlConstants.update_bulk_weight),
-      headers: header,
-      body: requestBody,
-    );
-
-    print('----UpdateBulkWeight res :  ${response.body.toString()}');
-
-    if (response.statusCode == 200) {
-      return StatusMsgResModel.fromJson(json.decode(response.body)); //Return decoded response
-    } else {
-      throw Exception('Failed to load UpdateBulkWeight response');
-    }
-  }
-
-
-  // update_device_token
-  Future<StatusMsgResModel> fetchUpdateDeviceTokenApi(String driverId, String deviceToken) async {
-    var requestBody = {
-      'driver_id': driverId,
-      'device_token': deviceToken,
-    };
-
-    http.Response response = await http.post(
-      Uri.parse(UrlConstants.update_device_token),
-      headers: header,
-      body: requestBody,
-    );
-
-    print('----update_device_token res :  ${response.body.toString()}');
-
-    if (response.statusCode == 200) {
-      return StatusMsgResModel.fromJson(json.decode(response.body)); //Return decoded response
-    } else {
-      throw Exception('Failed to load update_device_token response');
+      throw Exception('Failed to load drop off lists response');
     }
   }
 }

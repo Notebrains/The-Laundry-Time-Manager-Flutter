@@ -20,15 +20,12 @@ class _LogInState extends State<LogIn> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.grey[50],
-        body: Form(
-          key: _key,
-          autovalidateMode: AutovalidateMode.always,
-          child: formUi(),
-        ),
+    return Scaffold(
+      backgroundColor: Colors.grey[50],
+      body: Form(
+        key: _key,
+        autovalidateMode: AutovalidateMode.always,
+        child: formUi(),
       ),
     );
   }
@@ -84,6 +81,7 @@ class _LogInState extends State<LogIn> {
             ),
             preferences: AnimationPreferences(autoPlay: AnimationPlayStates.Forward, duration: Duration(milliseconds: 900)),
           ),
+
           Align(
             alignment: Alignment.centerRight,
             child: SlideInUp(

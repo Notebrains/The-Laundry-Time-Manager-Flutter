@@ -26,60 +26,14 @@ class Strings {
   static const String shareTxt =
       'CLASH OF CARDZ is a highly addictive high score competitive trump card style game. Join the game now and beat others.';
   static const String txt_lorem_ipsum_big =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut .';
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur adipiscing elit, sed do eiusmod tempor incididunt.';
   static const String txt_lorem_ipsum_small = 'Lorem ipsum dolor sit\nconsecte pcing.';
   static const String txt_lorem_ipsum_mid = 'Lorem ipsum dolor sit consecte pcing dolor sit consecte pcing.';
-
-  //static const String txt_lorem_ipsum_big = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-  static const String txtSupport1 =
-      'Feel free to reach ou on support@tlt.com. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.';
-  static const String txtSupport2 =
-      'Ur support wil be available 24/7 on +919745456434. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.';
-  static const String txtTerms = 'Terms Of Services';
-  static const String txtTerms1 =
-      'These terms and conditions outline the rules and regulations for the use of Company Name Website, located at Website.com.';
-  static const String txtTerms2 =
-      'We employ the use of cookies. By accessing Website Name, you agreed to use cookies in agreement with the Company Name Privacy Policy.';
-  static const String txtTerms3 =
-      'Most interactive websites use cookies to let us retrieve the user details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.';
-  static const String txtTerms4 = 'License';
-  static const String txtTerms5 =
-      'Unless otherwise stated, Company Name and/or its licensors own the intellectual property rights for all material on Website Name. All intellectual property rights are reserved. You may access this from Website Name for your own personal use subjected to restrictions set in these terms and conditions.';
-
-  static const String txtFaq = 'Frequently Asked Questions';
-  static const String txtFaq1 = 'How do I start?';
-  static const String txtFaq11 = 'All you need to do is visit our website and create an account or sign in through Facebook or Google+';
-  static const String txtFaq2 = 'Where shall I drop-off my clothes?';
-  static const String txtFa22 =
-      'Please choose while placing your order if you would like us to pick it up from your doorstep or concierge. We service Apartments, Condos, Businesses and houses. Please place your laundry in a disposable bag and label it with your name and address or if its your second order, then you would have a reusable garment bag from Simply Laundry that you can reuse.';
-  static const String txtFaq3 = 'How will I know that my laundry has been picked-up?';
-  static const String txtFa33 =
-      'Once you place your order, Simply Laundry gets notified that your laundry is ready for pick-up. Our team will swing by to collect it from your concierge or doorstep (as per your chosen option) and we will change the status of your order to "Picked-up" in your account.';
-  static const String txtFaq4 = 'How do I place an order?';
-  static const String txtFa44 =
-      'To place your first order, simply visit our website and create an account – you also have the option of signing in through Facebook or Google+. Once your account is set up, you can place an order whenever you like by clicking the ‘Place Order’ tab on our website.';
-static const String txtFaq5 = 'How will I know that my laundry has been dry-cleaned and delivered?';
-  static const String txtFa55 =
-      'imply Laundry will send you an email or SMS to let you know your clean, fresh laundry has been dropped off as per your request. That can be either your doorstep at your house, condo or apartment building or at your concierge.';
+  static const String txt_review = 'This is one of the finest books that I have come across for group work. This book helps in understanding the whole concept of Group Work and gives a fine view of the subject, very good...understanding the topics of principles, process and other topics is explained very aptly.';
 
   static const String welcomeScreenTitle = '''Ready to find your favorite lesson?''';
 
   static const String welcomeScreenSubTitle = '''Anyone can join the millions of
 members in our community to learn
 cutting-edge skills.''';
-
-  static const String getStartedButton = 'Get Started';
-
-  static const String greetingMessage = 'Hi Monica!';
-  static const String whatLearnToday = 'What would you like to learn today?';
-  static const String searchHere = 'Search here';
-  static const String lessons = 'Lessons';
-  static const String myClasses = 'My Classes';
-  static const String popular = 'Popular';
-  static const String joinAWorkshop = 'Join A Workshop';
-  static const String graphicDesigner = 'Graphic Designer';
-  static const String swimming = 'Swimming';
-  static const String cycling = 'Cycling';
-  static const String skiing = 'Skiing';
-  static const String boating = 'Boating';
 }

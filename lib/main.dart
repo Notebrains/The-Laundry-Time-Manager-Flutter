@@ -47,7 +47,7 @@ class MyRootApp extends StatelessWidget {
               theme: AppTheme.lightTheme,
               //locale: DevicePreview.of(context).locale, // Add the locale here
               //builder: DevicePreview.appBuilder, // Add the builder here
-              routes:  {
+              routes: {
                 Routes.home_screen: (context) => Home(),
                 Routes.offers_screen: (context) => Offers(),
                 Routes.orders_screen: (context) => Orders(),

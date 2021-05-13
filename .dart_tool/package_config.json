@@ -470,6 +470,42 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "url_launcher",
+      "rootUri": "file:///Users/kiron/DEV/FLUTTER/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_linux",
+      "rootUri": "file:///Users/kiron/DEV/FLUTTER/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_macos",
+      "rootUri": "file:///Users/kiron/DEV/FLUTTER/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "rootUri": "file:///Users/kiron/DEV/FLUTTER/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_web",
+      "rootUri": "file:///Users/kiron/DEV/FLUTTER/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "url_launcher_windows",
+      "rootUri": "file:///Users/kiron/DEV/FLUTTER/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "uuid",
       "rootUri": "file:///Users/kiron/DEV/FLUTTER/flutter_sdk/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-2.2.2",
       "packageUri": "lib/",
@@ -506,7 +542,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-05-03T12:15:01.048666Z",
+  "generated": "2021-05-07T07:43:57.964210Z",
   "generator": "pub",
   "generatorVersion": "2.12.1"
 }

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:tlt_manager/models/home_category_model.dart';
 import 'package:tlt_manager/ui/exports/routes.dart';
 import 'package:tlt_manager/ui/exports/styles.dart';
@@ -32,7 +33,7 @@ class Home extends StatelessWidget {
               //IconButton(icon: Icon(Icons.share), onPressed: () {})
             ],
             floating: true,
-            pinned: true,
+            pinned: false,
             expandedHeight: 180,
             flexibleSpace: FlexibleSpaceBar(
               //title: Text("HOME"),
@@ -52,27 +53,30 @@ class Home extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
 
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Txt(txt: 'IMDADUL HAQUE', txtColor: Colors.blueGrey, txtSize: 22, fontWeight: FontWeight.normal, padding: 0, onTap: null),
+                    SlideInLeft(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Txt(txt: 'IMDADUL HAQUE', txtColor: Colors.blueGrey, txtSize: 22, fontWeight: FontWeight.normal, padding: 0, onTap: null),
 
-                        Container(
-                          padding: const EdgeInsets.fromLTRB(18, 5, 18, 5),
-                          margin: const EdgeInsets.fromLTRB(0, 5, 0, 3),
-                          decoration: new BoxDecoration(
-                            color: Colors.blueGrey.withOpacity(0.8),
-                            borderRadius: BorderRadius.all(Radius.circular(3)),
+                          Container(
+                            padding: const EdgeInsets.fromLTRB(18, 5, 18, 5),
+                            margin: const EdgeInsets.fromLTRB(0, 5, 0, 3),
+                            decoration: new BoxDecoration(
+                              color: Colors.blueGrey.withOpacity(0.8),
+                              borderRadius: BorderRadius.all(Radius.circular(3)),
+                            ),
+                            child: Txt(txt: 'Manager', txtColor: Colors.white, txtSize: 14, fontWeight: FontWeight.normal, padding: 0, onTap: null),
                           ),
-                          child: Txt(txt: 'Manager', txtColor: Colors.white, txtSize: 14, fontWeight: FontWeight.normal, padding: 0, onTap: null),
-                        ),
 
-                        TxtIcRow(txt: ' imdadul@gmail.com', txtColor: Colors.blueGrey, txtSize: 14, fontWeight: FontWeight.normal,),
-                      ],
+                          TxtIcRow(txt: ' imdadul@gmail.com', txtColor: Colors.blueGrey, txtSize: 14, fontWeight: FontWeight.normal,
+                          icon: Icons.mail_rounded, icColor: Colors.blueGrey.withOpacity(0.8),),
+                        ],
+                      ),
                     ),
 
-                    Image.asset('assets/images/manager_app_logo.png', width: 75, height: 75,),
+                    SlideInRight(child: Image.asset('assets/images/manager_app_logo.png', width: 75, height: 75,)),
                   ],
                 ),
               ),
@@ -92,30 +96,35 @@ class Home extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
                   return InkWell(
-                    child: Card(
-                      elevation: 12,
-                      color: Colors.primaries[Random().nextInt(Colors.primaries.length)].withOpacity(0.1),
-                      shadowColor: Colors.primaries[Random().nextInt(Colors.primaries.length)].withOpacity(0.1),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          ElevatedIcon(size: 45, elevation: 5, icon: categoryList[index].icon, bgColors: Colors.white, icColors: AppTheme.selectedTabBackgroundColor, onPressed: null),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 12, bottom: 5),
-                            child: Txt(txt: categoryList[index].category, txtColor: AppTheme.topBarBackgroundColor, txtSize: 16, fontWeight: FontWeight.normal, padding: 0, onTap: null),
-                          ),
-
-                          Txt(txt: categoryList[index].count, txtColor: AppTheme.topBarBackgroundColor, txtSize: 16, fontWeight: FontWeight.normal, padding: 0, onTap: null),
-
-                          SizedBox(
-                            width: 50,
-                            child: Divider(
-                              thickness: 2,
-                              color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                    child: SlideInUp(
+                      child: Card(
+                        elevation: 12,
+                        color: Colors.primaries[Random().nextInt(Colors.primaries.length)].withOpacity(0.1),
+                        shadowColor: Colors.primaries[Random().nextInt(Colors.primaries.length)].withOpacity(0.1),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            ElevatedIcon(size: 45, elevation: 5, icon: categoryList[index].icon,
+                                bgColors: Colors.white,
+                                icColors: AppTheme.selectedTabBackgroundColor, onPressed: null),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 18, bottom: 5),
+                              child: Txt(txt: categoryList[index].category, txtColor: AppTheme.topBarBackgroundColor, txtSize: 16, fontWeight: FontWeight.normal, padding: 0, onTap: null),
                             ),
-                          ),
-                        ],
+
+                           /*
+                           Txt(txt: categoryList[index].count, txtColor: AppTheme.topBarBackgroundColor, txtSize: 16, fontWeight: FontWeight.normal, padding: 0, onTap: null),
+                           */
+                            SizedBox(
+                              width: 60,
+                              child: Divider(
+                                thickness: 2,
+                                color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
 

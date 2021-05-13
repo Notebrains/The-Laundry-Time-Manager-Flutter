@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1343039617/android.path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/1343039617/android.path_provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-915332800/android.shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-915332800/android.shared_preferences.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/574125971/android.sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/574125971/android.sqflite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-298372332/android.url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/-298372332/android.url_launcher.iml" />
     </modules>
   </component>
 </project>

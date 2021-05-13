@@ -1,11 +1,15 @@
 import 'package:rxdart/rxdart.dart';
 import 'package:tlt_manager/ui/exports/helpers.dart';
+import 'package:tlt_manager/webservices/response_models/customer_list_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/offers_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/orders_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/pick_up_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/product_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/reviews_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/sales_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/status_msg_res_model.dart';
-import 'response_models/bulk_pick_up_res_model.dart';
-import 'response_models/home_category_res_model.dart';
+import 'response_models/drop_off_res_model.dart';
 import 'response_models/login_res_model.dart';
-import 'response_models/premium_drop_off_res_model.dart';
-import 'response_models/premium_pick_up_res_model.dart';
 
 class ApiBloc {
   Repository _repository = Repository();
@@ -18,115 +22,108 @@ class ApiBloc {
     _loginResFetcher.sink.add(loginResponse);
   }
 
-  //Request Pass Fetcher
-  final _requestPassFetcher = PublishSubject<StatusMsgResModel>();
-  Stream<StatusMsgResModel> get requestPassApi => _requestPassFetcher.stream;
-  fetchRequestPassApi(String email) async {
-    StatusMsgResModel loginResponse = await _repository.fetchRequestPassApi(email);
-    _requestPassFetcher.sink.add(loginResponse);
-  }
-
-  //Premium Pickup List Fetcher
-  final _premiumPickupListFetcher = PublishSubject<PremiumPickUpResModel>();
-  Stream<PremiumPickUpResModel> get premiumPickupListApi => _premiumPickupListFetcher.stream;
-  fetchPremiumPickupListsApi(String driverId) async {
-    PremiumPickUpResModel loginResponse = await _repository.fetchPremiumPickupListsApi(driverId);
-    _premiumPickupListFetcher.sink.add(loginResponse);
-  }
-
-  //Premium Delivery List Fetcher
-  final _premiumDeliveryListFetcher = PublishSubject<PremiumDropOffResModel>();
-  Stream<PremiumDropOffResModel> get premiumDeliveryListApi => _premiumDeliveryListFetcher.stream;
-  fetchPremiumDeliveryListsApi(String driverId) async {
-    PremiumDropOffResModel loginResponse = await _repository.fetchPremiumDeliveryListsApi(driverId);
-    _premiumDeliveryListFetcher.sink.add(loginResponse);
-  }
-
-  //Bulk Pickup Lists Api
-  final _fetchBulkPickupListFetcher = PublishSubject<BulkPickUpResModel>();
-  Stream<BulkPickUpResModel> get bulkPickupListApi => _fetchBulkPickupListFetcher.stream;
-  fetchBulkPickupListsApi(String driverId) async {
-    BulkPickUpResModel loginResponse = await _repository.fetchBulkPickupListsApi(driverId);
-    _fetchBulkPickupListFetcher.sink.add(loginResponse);
-  }
-
-  //Bulk Delivery List Api
-  final _fetchBulkDeliveryListFetcher = PublishSubject<BulkPickUpResModel>();
-  Stream<BulkPickUpResModel> get bulkDeliveryListApi => _fetchBulkDeliveryListFetcher.stream;
-  fetchBulkDeliveryListsApi(String driverId) async {
-    BulkPickUpResModel loginResponse = await _repository.fetchBulkDeliveryListsApi(driverId);
-    _fetchBulkDeliveryListFetcher.sink.add(loginResponse);
-  }
-
-
-  //Accept Pickup Request
-  final _fetchUpdateOrderRequestFetcher = PublishSubject<StatusMsgResModel>();
-  Stream<StatusMsgResModel> get acceptUpdateOrderRequestFetcherApi => _fetchUpdateOrderRequestFetcher.stream;
-  fetchUpdateOrderRequestApi(String requestType, String orderId, String pickupStatus,
-      String deliveryStatus, String cancelReason) async {
-    StatusMsgResModel loginResponse = await _repository.fetchUpdateOrderRequestApi(requestType, orderId, pickupStatus, deliveryStatus, cancelReason);
-    _fetchUpdateOrderRequestFetcher.sink.add(loginResponse);
-  }
-
-  //Update Pickup Success
-  final _fetchUpdatePickupSuccessFetcher = PublishSubject<StatusMsgResModel>();
-  Stream<StatusMsgResModel> get updatePickupSuccessApi => _fetchUpdatePickupSuccessFetcher.stream;
-  fetchUpdatePickupSuccessApi(String orderId, String selectedItems) async {
-    StatusMsgResModel loginResponse = await _repository.fetchUpdatePickupSuccessApi(orderId, selectedItems);
-    _fetchUpdatePickupSuccessFetcher.sink.add(loginResponse);
-  }
-
-
-  //Update Delivery Success
-  final _fetchUpdateDeliverySuccessFetcher = PublishSubject<StatusMsgResModel>();
-  Stream<StatusMsgResModel> get updateDeliverySuccessApi => _fetchUpdateDeliverySuccessFetcher.stream;
-  fetchUpdateDeliverySuccessApi(String orderId) async {
-    StatusMsgResModel loginResponse = await _repository.fetchUpdateDeliverySuccessApi(orderId);
-    _fetchUpdateDeliverySuccessFetcher.sink.add(loginResponse);
-  }
-
-
-  //Update Cod Payment
-  final _fetchUpdateCodPaymentFetcher = PublishSubject<StatusMsgResModel>();
-  Stream<StatusMsgResModel> get updateCodPaymentApi => _fetchUpdateCodPaymentFetcher.stream;
-  fetchUpdateCodPaymentApi(String orderId, String receivedAmount, String paymentType) async {
-    StatusMsgResModel loginResponse = await _repository.fetchUpdateCodPaymentApi(orderId, receivedAmount, paymentType);
-    _fetchUpdateCodPaymentFetcher.sink.add(loginResponse);
-  }
-
-
-  // Update Bulk Weight Fetcher
-  final _fetchUpdateBulkWeightFetcher = PublishSubject<StatusMsgResModel>();
-  Stream<StatusMsgResModel> get updateBulkWeightApi => _fetchUpdateBulkWeightFetcher.stream;
-  fetchUpdateBulkWeightApi(String orderId, String bulkWeight) async {
-    StatusMsgResModel loginResponse = await _repository.fetchUpdateBulkWeightApi(orderId, bulkWeight);
-    _fetchUpdateBulkWeightFetcher.sink.add(loginResponse);
-  }
-
-
-  // Update Bulk Weight Fetcher
+  // device token
   final _fetchUpdateDeviceTokenFetcher = PublishSubject<StatusMsgResModel>();
   Stream<StatusMsgResModel> get updateDeviceTokenApi => _fetchUpdateDeviceTokenFetcher.stream;
-  fetchUpdateDeviceTokenApi(String driverId, String deviceToken) async {
-    StatusMsgResModel loginResponse = await _repository.fetchUpdateDeviceTokenApi( driverId, deviceToken);
-    _fetchUpdateDeviceTokenFetcher.sink.add(loginResponse);
+  fetchUpdateDeviceTokenApi(String managerId, String deviceToken) async {
+    StatusMsgResModel model = await _repository.fetchUpdateDeviceTokenApi( managerId, deviceToken);
+    _fetchUpdateDeviceTokenFetcher.sink.add(model);
+  }
+
+
+  // fetch Customer Lists Api
+  final _fetchCustomerListsApi = PublishSubject<CustomerListResModel>();
+  Stream<CustomerListResModel> get customerListsApi => _fetchCustomerListsApi.stream;
+  fetchCustomerListsApi() async {
+    CustomerListResModel model = await _repository.fetchCustomerListsApi();
+    _fetchCustomerListsApi.sink.add(model);
+  }
+
+
+  //Order
+  final _fetchOrder = PublishSubject<OrdersResModel>();
+  Stream<OrdersResModel> get ordersApi => _fetchOrder.stream;
+  fetchOrdersApi(String fromDate, String toDate) async {
+    OrdersResModel model = await _repository.fetchOrdersApi(fromDate, toDate);
+    _fetchOrder.sink.add(model);
+  }
+
+
+  //Items
+  final _fetchItems = PublishSubject<ProductResModel>();
+  Stream<ProductResModel> get itemsApi => _fetchItems.stream;
+  fetchItemsApi() async {
+    ProductResModel model = await _repository.fetchItemsApi();
+    _fetchItems.sink.add(model);
+  }
+
+
+  //Offers
+  final _fetchOffers = PublishSubject<OffersResModel>();
+  Stream<OffersResModel> get offerApi => _fetchOffers.stream;
+  fetchOffersApi() async {
+    OffersResModel model = await _repository.fetchOffersApi();
+    _fetchOffers.sink.add(model);
+  }
+
+
+  //Review
+  final _fetchReview = PublishSubject<ReviewsResModel>();
+  Stream<ReviewsResModel> get reviewApi => _fetchReview.stream;
+  fetchReviewApi() async {
+    ReviewsResModel model = await _repository.fetchReviewApi();
+    _fetchReview.sink.add(model);
+  }
+
+
+  //Sales Api
+  final _fetchSales = PublishSubject<SalesResModel>();
+  Stream<SalesResModel> get salesApi => _fetchSales.stream;
+  fetchSalesApi() async {
+    SalesResModel model = await _repository.fetchSalesApi();
+    _fetchSales.sink.add(model);
+  }
+
+
+  //Delete Customer Api
+  final _fetchDeleteCustomerApi = PublishSubject<StatusMsgResModel>();
+  Stream<StatusMsgResModel> get deleteCustomerApi => _fetchDeleteCustomerApi.stream;
+  fetchDeleteCustomerApi(String customerId) async {
+    StatusMsgResModel model = await _repository.fetchDeleteCustomerApi(customerId);
+    _fetchDeleteCustomerApi.sink.add(model);
+  }
+
+  //PickUp
+  final _fetchPickUpListsApi = PublishSubject<PickUpResModel>();
+  Stream<PickUpResModel> get pickUpListsApi => _fetchPickUpListsApi.stream;
+  fetchPickUpListsApi(String fromDate, String toDate) async {
+    PickUpResModel model = await _repository.fetchPickUpListsApi(fromDate, toDate);
+    _fetchPickUpListsApi.sink.add(model);
+  }
+
+
+  //DropOff Lists Api
+  final _fetchDropOffListsApi = PublishSubject<DropOffResModel>();
+  Stream<DropOffResModel> get dropOffListsApi => _fetchDropOffListsApi.stream;
+  fetchDropOffListsApi(String fromDate, String toDate) async {
+    DropOffResModel model = await _repository.fetchDropOffListsApi(fromDate, toDate);
+    _fetchDropOffListsApi.sink.add(model);
   }
 
 
   dispose() {
     //Close the api fetcher
     _loginResFetcher.close();
-    _requestPassFetcher.close();
-    _premiumPickupListFetcher.close();
-    _premiumDeliveryListFetcher.close();
-    _fetchBulkPickupListFetcher.close();
-    _fetchBulkDeliveryListFetcher.close();
-    _fetchUpdateOrderRequestFetcher.close();
-    _fetchUpdatePickupSuccessFetcher.close();
-    _fetchUpdateDeliverySuccessFetcher.close();
-    _fetchUpdateCodPaymentFetcher.close();
-    _fetchUpdateBulkWeightFetcher.close();
     _fetchUpdateDeviceTokenFetcher.close();
+    _fetchCustomerListsApi.close();
+    _fetchItems.close();
+    _fetchOrder.close();
+    _fetchOffers.close();
+    _fetchReview.close();
+    _fetchSales.close();
+    _fetchDeleteCustomerApi.close();
+    _fetchPickUpListsApi.close();
+    _fetchDropOffListsApi.close();
   }
 }
 

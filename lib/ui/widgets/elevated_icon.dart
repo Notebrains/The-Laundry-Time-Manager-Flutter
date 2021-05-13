@@ -31,7 +31,7 @@ class ElevatedIcon extends StatelessWidget {
         child: Material(
           color: Colors.transparent, // button color
           child: InkWell(
-            splashColor: Colors.blue, // inkwell color
+            splashColor: Colors.lightBlueAccent, // inkwell color
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Icon(

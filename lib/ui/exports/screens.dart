@@ -1,7 +1,5 @@
 export '../screens/login.dart';
 export '../screens/forgot_password.dart';
-export '../screens/premium_pickup.dart';
-export '../screens/settings.dart';
 export '../screens/request.dart';
 export '../screens/home.dart';
 export '../screens/offers.dart';
@@ -9,3 +7,4 @@ export '../screens/customer.dart';
 export '../screens/orders.dart';
 export '../screens/pickup.dart';
 export '../screens/drop_off.dart';
+export '../screens/order_details.dart';

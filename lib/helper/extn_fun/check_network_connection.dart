@@ -11,7 +11,7 @@ class NetworkCheck {
     return false;
   }
 
-  dynamic checkInternet(Function func) {
+  dynamic checkInternet({Function(bool) func}) {
     check().then((internet) {
       if (internet != null && internet) {
         func(true);
@@ -21,4 +21,5 @@ class NetworkCheck {
       }
     });
   }
+
 }

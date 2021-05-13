@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tlt_manager/ui/exports/helpers.dart';
 import 'package:tlt_manager/ui/exports/routes.dart';
+import 'package:tlt_manager/ui/exports/screens.dart';
 import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
 
@@ -59,13 +61,23 @@ class NavigationDrawer extends StatelessWidget {
               text: 'Customers',
               onTap: () => Navigator.pushReplacementNamed(context, Routes.customer_screen),
             ),
+
+            drawerBodyItem(
+              icon: Icons.logout,
+              text: 'Logout',
+              onTap: (){
+                SharedPreferenceHelper().clearPrefData();
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LogIn()));
+              } ,
+            ),
+            /*
             Padding(
               padding: const EdgeInsets.only(left: 18),
               child: Text(
                 'App version 1.0.0',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.normal),
               ),
-            ),
+            ),*/
           ],
         ),
       ),

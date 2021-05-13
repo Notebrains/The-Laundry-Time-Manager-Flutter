@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:tlt_manager/helper/extn_fun/common_fun.dart';
 import 'package:tlt_manager/ui/exports/helpers.dart';
+import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
 import 'package:tlt_manager/webservices/response_models/status_msg_res_model.dart';
 
@@ -129,14 +130,14 @@ class _RequestState extends State<Request> {
             SlideInRight(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-                child: TxtIcRow(txt: widget.mobile, txtColor: Colors.black54, txtSize: 16, fontWeight: FontWeight.normal),
+                child: TxtWithWidth(txt: widget.mobile, txtColor: Colors.black54, txtSize: 16, fontWeight: FontWeight.normal, width: 40 * SizeConfig.widthMultiplier,),
               ),
             ),
 
             SlideInRight(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-                child: TxtIcRow(txt: widget.address, txtColor: Colors.black54, txtSize: 16, fontWeight: FontWeight.normal,),
+                child: TxtWithWidth(txt: widget.address, txtColor: Colors.black54, txtSize: 16, fontWeight: FontWeight.normal,width: 40 * SizeConfig.widthMultiplier,),
               ),
             ),
 
@@ -303,8 +304,8 @@ class _RequestState extends State<Request> {
 
 
   void acceptOrDeclineDialogByApi(BuildContext context, String orderId, String pickupStatus, String reason, {Function onClose}) async {
-    apiBloc.fetchUpdateOrderRequestApi(widget.requestType, orderId, widget.requestType == 'Pickup'? pickupStatus:'',
-        widget.requestType == 'Dropoff'? pickupStatus:'', reason);
+    //apiBloc.fetchUpdateOrderRequestApi(widget.requestType, orderId, widget.requestType == 'Pickup'? pickupStatus:'',
+        //widget.requestType == 'Dropoff'? pickupStatus:'', reason);
 
     showDialog(
       context: context,
@@ -322,7 +323,7 @@ class _RequestState extends State<Request> {
                 borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
               child: StreamBuilder(
-                  stream: apiBloc.acceptUpdateOrderRequestFetcherApi,
+                  //stream: apiBloc.acceptUpdateOrderRequestFetcherApi,
                   builder: (context, AsyncSnapshot<StatusMsgResModel> snapshot) {
                     if (snapshot.hasData) {
                       if (snapshot.data.status == 1) {

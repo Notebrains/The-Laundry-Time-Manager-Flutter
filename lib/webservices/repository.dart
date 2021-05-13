@@ -1,10 +1,13 @@
 import 'package:tlt_manager/ui/exports/helpers.dart';
-
-import 'response_models/bulk_pick_up_res_model.dart';
-import 'response_models/home_category_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/customer_list_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/drop_off_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/offers_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/orders_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/pick_up_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/product_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/reviews_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/sales_res_model.dart';
 import 'response_models/login_res_model.dart';
-import 'response_models/premium_drop_off_res_model.dart';
-import 'response_models/premium_pick_up_res_model.dart';
 import 'response_models/status_msg_res_model.dart';
 
 class Repository {
@@ -12,32 +15,26 @@ class Repository {
 
   Future<LoginResModel> fetchLoginApi(String email, String password) => appApiProvider.fetchLoginApi(email, password);
 
-  Future<StatusMsgResModel> fetchRequestPassApi(String email) => appApiProvider.fetchRequestPassApi(email);
+  Future<StatusMsgResModel> fetchUpdateDeviceTokenApi(String managerId, String deviceToken) =>
+      appApiProvider.fetchUpdateDeviceTokenApi(managerId, deviceToken);
 
-  Future<PremiumPickUpResModel> fetchPremiumPickupListsApi(String driverId) => appApiProvider.fetchPremiumPickupListsApi(driverId);
+  Future<CustomerListResModel> fetchCustomerListsApi() => appApiProvider.fetchCustomerListsApi();
 
-  Future<PremiumDropOffResModel> fetchPremiumDeliveryListsApi(String driverId) => appApiProvider.fetchPremiumDeliveryListsApi(driverId);
+  Future<ProductResModel> fetchItemsApi() => appApiProvider.fetchItemsApi();
 
-  Future<BulkPickUpResModel> fetchBulkPickupListsApi(String driverId) => appApiProvider.fetchBulkPickupListsApi(driverId);
+  Future<OffersResModel> fetchOffersApi() => appApiProvider.fetchOffersApi();
 
-  Future<BulkPickUpResModel> fetchBulkDeliveryListsApi(String driverId) => appApiProvider.fetchBulkDeliveryListsApi(driverId);
+  Future<ReviewsResModel> fetchReviewApi() => appApiProvider.fetchReviewApi();
 
-  Future<StatusMsgResModel> fetchUpdateOrderRequestApi(String requestType, String orderId, String pickupStatus,
-      String deliveryStatus, String cancelReason) =>
-      appApiProvider.fetchUpdateOrderRequestApi(requestType, orderId, pickupStatus, deliveryStatus, cancelReason);
+  Future<SalesResModel> fetchSalesApi() => appApiProvider.fetchSalesApi();
+
+  Future<OrdersResModel> fetchOrdersApi(String fromDate, String toDate) => appApiProvider.fetchOrdersApi( fromDate, toDate);
+
+  Future<StatusMsgResModel> fetchDeleteCustomerApi(String customerId) => appApiProvider.fetchDeleteCustomerApi(customerId);
+
+  Future<PickUpResModel> fetchPickUpListsApi(String fromDate, String toDate) => appApiProvider.fetchPickUpListsApi(fromDate, toDate);
+
+  Future<DropOffResModel> fetchDropOffListsApi(String fromDate, String toDate) => appApiProvider.fetchDropOffListsApi(fromDate, toDate);
 
 
-  Future<StatusMsgResModel> fetchUpdatePickupSuccessApi(String orderId, String selectedItems) =>
-      appApiProvider.fetchUpdatePickupSuccessApi(orderId, selectedItems);
-
-  Future<StatusMsgResModel> fetchUpdateDeliverySuccessApi(String orderId) => appApiProvider.fetchUpdateDeliverySuccessApi(orderId);
-
-  Future<StatusMsgResModel> fetchUpdateCodPaymentApi(String orderId, String receivedAmount, String paymentType) =>
-      appApiProvider.fetchUpdateCodPaymentApi(orderId, receivedAmount, paymentType);
-
-  Future<StatusMsgResModel> fetchUpdateBulkWeightApi(String orderId, String bulkWeight) =>
-      appApiProvider.fetchUpdateBulkWeightApi(orderId, bulkWeight);
-
-  Future<StatusMsgResModel> fetchUpdateDeviceTokenApi(String driverId, String deviceToken) =>
-      appApiProvider.fetchUpdateDeviceTokenApi(driverId, deviceToken);
 }

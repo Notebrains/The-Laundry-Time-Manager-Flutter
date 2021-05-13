@@ -18,9 +18,12 @@ class NoDataFound extends StatelessWidget{
             child: Lottie.asset('assets/animations/lottiefiles/empty_search_data.json', fit: BoxFit.cover, width: 200, height: 200),
           ),
 
-          Text(txt,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.normal, wordSpacing: 0)),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 100),
+            child: Text(txt,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.normal, wordSpacing: 0)),
+          ),
 
         ],
       ),

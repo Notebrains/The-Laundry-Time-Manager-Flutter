@@ -1,5 +1,5 @@
 /// status : 1
-/// message : "Address book has been successfully deleted"
+/// message : "Success"
 
 class StatusMsgResModel {
   int _status;

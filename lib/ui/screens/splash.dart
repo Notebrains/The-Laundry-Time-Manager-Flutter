@@ -42,8 +42,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    //Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Intro()));
-
     SharedPreferenceHelper().getUserSavedData().then((sharedPrefUserProfileModel) {
       String userId = sharedPrefUserProfileModel.userId ?? '';
       if(userId != ''){
@@ -56,80 +54,77 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.lightTheme,
-        home: Scaffold(
-          //backgroundColor: Colors.lightBlueAccent.withOpacity(0.6),
-          body: Stack(
-            fit: StackFit.expand,
-            children: <Widget>[
-              /*Image.asset(
+    return Scaffold(
+      //backgroundColor: Colors.lightBlueAccent.withOpacity(0.6),
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          /*Image.asset(
                 'assets/images/bg-6.png',
                 fit: BoxFit.cover,
               ),*/
 
 
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(8.0),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(8.0),
+              ),
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ZoomIn(
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/manager_app_logo.png',
+                    width: 70 * SizeConfig.imageSizeMultiplier,
+                    height: 90 * SizeConfig.imageSizeMultiplier,
+                    //color: Colors.white,
                   ),
                 ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ZoomIn(
-                    child: Center(
-                      child: Image.asset(
-                        'assets/images/manager_app_logo.png',
-                        width: 70 * SizeConfig.imageSizeMultiplier,
-                        height: 90 * SizeConfig.imageSizeMultiplier,
-                        //color: Colors.white,
-                      ),
-                    ),
-                  ),
 
 
-                  ZoomIn(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 30,),
-                      child: Text(
-                        "THE LAUNDRY TIME",
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        softWrap: false,
-                        style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 28, color: Colors.black54),
-                      ),
-                    ),
-                  )
-
-                ],
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
+              ZoomIn(
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 60),
-                  child: FadeIn(
-                    child: Container(
-                      width: 250,
-                      height: 16,
-                      child: LinearProgressIndicator(
-                        valueColor: new AlwaysStoppedAnimation<Color>(Colors.greenAccent[700]),
-                      ),
-                    ),
+                  padding: const EdgeInsets.only(top: 30,),
+                  child: Text(
+                    "THE LAUNDRY TIME",
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    softWrap: false,
+                    style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 28, color: Colors.black54),
                   ),
                 ),
-              ),
-              Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Lottie.asset('assets/animations/lottiefiles/beer-bubbles.json', fit: BoxFit.fitWidth)),
+              )
+
             ],
           ),
-        ));
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 60),
+              child: FadeIn(
+                child: Container(
+                  width: 250,
+                  height: 16,
+                  child: LinearProgressIndicator(
+                    valueColor: new AlwaysStoppedAnimation<Color>(Colors.greenAccent[700]),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Align(
+              alignment: Alignment.bottomCenter,
+              child: Lottie.asset('assets/animations/lottiefiles/beer-bubbles.json', fit: BoxFit.fitWidth)),
+        ],
+      ),
+    );
   }
 
 

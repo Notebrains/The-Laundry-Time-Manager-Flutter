@@ -101,7 +101,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   }
 
   void fetchDataApi(BuildContext context) async {
-    apiBloc.fetchRequestPassApi(email);
+    //apiBloc.fetchRequestPassApi(email);
     BuildContext dialogContext;
     showDialog(
       context: context,
@@ -121,7 +121,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               ),
 
               child: StreamBuilder(
-                  stream: apiBloc.requestPassApi,
+                  //stream: apiBloc.requestPassApi,
                   builder: (context, AsyncSnapshot<StatusMsgResModel> snapshot) {
                     if (snapshot.hasData) {
                       if (snapshot.data.status == 1) {
