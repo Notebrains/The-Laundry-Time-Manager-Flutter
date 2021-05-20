@@ -1,20 +1,20 @@
 /// status : 1
 /// message : "Success"
-/// response : [{"id":"52","offer_id":"","validity":"Expired","name":"Wash 2 & Get 1 Wash Free","category":"","subcategory":"","price":"20.00","production_type":"Dry Clean","image":"https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg","offer_items":[{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"}]}]
+/// response : {"offers_list":[{"id":"53","offer_id":"","validity":"2021-05-25","name":"May coupon code","category":"","subcategory":"","price":"30.00","production_type":"Press Only","image":"https://mridayadevstudio.com/tlt_dev/uploads/laundry-tshirt.png","offer_items":[{"item_name":"DRESS","item_price":"5.00","item_qty":"2","total_price":"10.00","billable_qty":"1","billable_price":"5.00"}]},{"id":"52","offer_id":"","validity":"Expired","name":"Wash 2 & Get 1 Wash Free","category":"","subcategory":"","price":"20.00","production_type":"Dry Clean","image":"https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg","offer_items":[{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"},{"item_name":"COAT","item_price":"18.00","item_qty":"1","total_price":"18.00","billable_qty":"0","billable_price":"0.00"}]}],"vouchers_list":[{"id":"4","code":"859988","how_many_user_can_use":"26","no_of_time_use_by_each":"10","total_useable":"260","total_used_by_customers":"1","discount_type":"Percentage Discount","discount_amount":"100.00","cutoff_amount":"25.00","valid_from":"19 May 2021","valid_to":"30 Jun 2021","details":"$100 discount on minimum laundry of $300","status":"Active","expiry_status":"Available","customer_details":[{"date":"19 May 2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]}]}
 
 class OffersResModel {
   int _status;
   String _message;
-  List<Response> _response;
+  Response _response;
 
   int get status => _status;
   String get message => _message;
-  List<Response> get response => _response;
+  Response get response => _response;
 
   OffersResModel({
       int status, 
       String message, 
-      List<Response> response}){
+      Response response}){
     _status = status;
     _message = message;
     _response = response;
@@ -23,12 +23,7 @@ class OffersResModel {
   OffersResModel.fromJson(dynamic json) {
     _status = json["status"];
     _message = json["message"];
-    if (json["response"] != null) {
-      _response = [];
-      json["response"].forEach((v) {
-        _response.add(Response.fromJson(v));
-      });
-    }
+    _response = json["response"] != null ? Response.fromJson(json["response"]) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -36,25 +31,244 @@ class OffersResModel {
     map["status"] = _status;
     map["message"] = _message;
     if (_response != null) {
-      map["response"] = _response.map((v) => v.toJson()).toList();
+      map["response"] = _response.toJson();
     }
     return map;
   }
 
 }
 
-/// id : "52"
-/// offer_id : ""
-/// validity : "Expired"
-/// name : "Wash 2 & Get 1 Wash Free"
-/// category : ""
-/// subcategory : ""
-/// price : "20.00"
-/// production_type : "Dry Clean"
-/// image : "https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg"
-/// offer_items : [{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"}]
+/// offers_list : [{"id":"53","offer_id":"","validity":"2021-05-25","name":"May coupon code","category":"","subcategory":"","price":"30.00","production_type":"Press Only","image":"https://mridayadevstudio.com/tlt_dev/uploads/laundry-tshirt.png","offer_items":[{"item_name":"DRESS","item_price":"5.00","item_qty":"2","total_price":"10.00","billable_qty":"1","billable_price":"5.00"}]},{"id":"52","offer_id":"","validity":"Expired","name":"Wash 2 & Get 1 Wash Free","category":"","subcategory":"","price":"20.00","production_type":"Dry Clean","image":"https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg","offer_items":[{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"},{"item_name":"COAT","item_price":"18.00","item_qty":"1","total_price":"18.00","billable_qty":"0","billable_price":"0.00"}]}]
+/// vouchers_list : [{"id":"4","code":"859988","how_many_user_can_use":"26","no_of_time_use_by_each":"10","total_useable":"260","total_used_by_customers":"1","discount_type":"Percentage Discount","discount_amount":"100.00","cutoff_amount":"25.00","valid_from":"19 May 2021","valid_to":"30 Jun 2021","details":"$100 discount on minimum laundry of $300","status":"Active","expiry_status":"Available","customer_details":[{"date":"19 May 2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]}]
 
 class Response {
+  List<Offers_list> _offersList;
+  List<Vouchers_list> _vouchersList;
+
+  List<Offers_list> get offersList => _offersList;
+  List<Vouchers_list> get vouchersList => _vouchersList;
+
+  Response({
+      List<Offers_list> offersList, 
+      List<Vouchers_list> vouchersList}){
+    _offersList = offersList;
+    _vouchersList = vouchersList;
+}
+
+  Response.fromJson(dynamic json) {
+    if (json["offers_list"] != null) {
+      _offersList = [];
+      json["offers_list"].forEach((v) {
+        _offersList.add(Offers_list.fromJson(v));
+      });
+    }
+    if (json["vouchers_list"] != null) {
+      _vouchersList = [];
+      json["vouchers_list"].forEach((v) {
+        _vouchersList.add(Vouchers_list.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    var map = <String, dynamic>{};
+    if (_offersList != null) {
+      map["offers_list"] = _offersList.map((v) => v.toJson()).toList();
+    }
+    if (_vouchersList != null) {
+      map["vouchers_list"] = _vouchersList.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+/// id : "4"
+/// code : "859988"
+/// how_many_user_can_use : "26"
+/// no_of_time_use_by_each : "10"
+/// total_useable : "260"
+/// total_used_by_customers : "1"
+/// discount_type : "Percentage Discount"
+/// discount_amount : "100.00"
+/// cutoff_amount : "25.00"
+/// valid_from : "19 May 2021"
+/// valid_to : "30 Jun 2021"
+/// details : "$100 discount on minimum laundry of $300"
+/// status : "Active"
+/// expiry_status : "Available"
+/// customer_details : [{"date":"19 May 2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]
+
+class Vouchers_list {
+  String _id;
+  String _code;
+  String _howManyUserCanUse;
+  String _noOfTimeUseByEach;
+  String _totalUseable;
+  String _totalUsedByCustomers;
+  String _discountType;
+  String _discountAmount;
+  String _cutoffAmount;
+  String _validFrom;
+  String _validTo;
+  String _details;
+  String _status;
+  String _expiryStatus;
+  List<Customer_details> _customerDetails;
+
+  String get id => _id;
+  String get code => _code;
+  String get howManyUserCanUse => _howManyUserCanUse;
+  String get noOfTimeUseByEach => _noOfTimeUseByEach;
+  String get totalUseable => _totalUseable;
+  String get totalUsedByCustomers => _totalUsedByCustomers;
+  String get discountType => _discountType;
+  String get discountAmount => _discountAmount;
+  String get cutoffAmount => _cutoffAmount;
+  String get validFrom => _validFrom;
+  String get validTo => _validTo;
+  String get details => _details;
+  String get status => _status;
+  String get expiryStatus => _expiryStatus;
+  List<Customer_details> get customerDetails => _customerDetails;
+
+  Vouchers_list({
+      String id, 
+      String code, 
+      String howManyUserCanUse, 
+      String noOfTimeUseByEach, 
+      String totalUseable, 
+      String totalUsedByCustomers, 
+      String discountType, 
+      String discountAmount, 
+      String cutoffAmount, 
+      String validFrom, 
+      String validTo, 
+      String details, 
+      String status, 
+      String expiryStatus, 
+      List<Customer_details> customerDetails}){
+    _id = id;
+    _code = code;
+    _howManyUserCanUse = howManyUserCanUse;
+    _noOfTimeUseByEach = noOfTimeUseByEach;
+    _totalUseable = totalUseable;
+    _totalUsedByCustomers = totalUsedByCustomers;
+    _discountType = discountType;
+    _discountAmount = discountAmount;
+    _cutoffAmount = cutoffAmount;
+    _validFrom = validFrom;
+    _validTo = validTo;
+    _details = details;
+    _status = status;
+    _expiryStatus = expiryStatus;
+    _customerDetails = customerDetails;
+}
+
+  Vouchers_list.fromJson(dynamic json) {
+    _id = json["id"];
+    _code = json["code"];
+    _howManyUserCanUse = json["how_many_user_can_use"];
+    _noOfTimeUseByEach = json["no_of_time_use_by_each"];
+    _totalUseable = json["total_useable"];
+    _totalUsedByCustomers = json["total_used_by_customers"];
+    _discountType = json["discount_type"];
+    _discountAmount = json["discount_amount"];
+    _cutoffAmount = json["cutoff_amount"];
+    _validFrom = json["valid_from"];
+    _validTo = json["valid_to"];
+    _details = json["details"];
+    _status = json["status"];
+    _expiryStatus = json["expiry_status"];
+    if (json["customer_details"] != null) {
+      _customerDetails = [];
+      json["customer_details"].forEach((v) {
+        _customerDetails.add(Customer_details.fromJson(v));
+      });
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    var map = <String, dynamic>{};
+    map["id"] = _id;
+    map["code"] = _code;
+    map["how_many_user_can_use"] = _howManyUserCanUse;
+    map["no_of_time_use_by_each"] = _noOfTimeUseByEach;
+    map["total_useable"] = _totalUseable;
+    map["total_used_by_customers"] = _totalUsedByCustomers;
+    map["discount_type"] = _discountType;
+    map["discount_amount"] = _discountAmount;
+    map["cutoff_amount"] = _cutoffAmount;
+    map["valid_from"] = _validFrom;
+    map["valid_to"] = _validTo;
+    map["details"] = _details;
+    map["status"] = _status;
+    map["expiry_status"] = _expiryStatus;
+    if (_customerDetails != null) {
+      map["customer_details"] = _customerDetails.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+/// date : "19 May 2021"
+/// order_id : "62193157"
+/// name : "Tanay Mitra"
+/// mobile : "9173037592"
+
+class Customer_details {
+  String _date;
+  String _orderId;
+  String _name;
+  String _mobile;
+
+  String get date => _date;
+  String get orderId => _orderId;
+  String get name => _name;
+  String get mobile => _mobile;
+
+  Customer_details({
+      String date, 
+      String orderId, 
+      String name, 
+      String mobile}){
+    _date = date;
+    _orderId = orderId;
+    _name = name;
+    _mobile = mobile;
+}
+
+  Customer_details.fromJson(dynamic json) {
+    _date = json["date"];
+    _orderId = json["order_id"];
+    _name = json["name"];
+    _mobile = json["mobile"];
+  }
+
+  Map<String, dynamic> toJson() {
+    var map = <String, dynamic>{};
+    map["date"] = _date;
+    map["order_id"] = _orderId;
+    map["name"] = _name;
+    map["mobile"] = _mobile;
+    return map;
+  }
+
+}
+
+/// id : "53"
+/// offer_id : ""
+/// validity : "2021-05-25"
+/// name : "May coupon code"
+/// category : ""
+/// subcategory : ""
+/// price : "30.00"
+/// production_type : "Press Only"
+/// image : "https://mridayadevstudio.com/tlt_dev/uploads/laundry-tshirt.png"
+/// offer_items : [{"item_name":"DRESS","item_price":"5.00","item_qty":"2","total_price":"10.00","billable_qty":"1","billable_price":"5.00"}]
+
+class Offers_list {
   String _id;
   String _offerId;
   String _validity;
@@ -77,7 +291,7 @@ class Response {
   String get image => _image;
   List<Offer_items> get offerItems => _offerItems;
 
-  Response({
+  Offers_list({
       String id, 
       String offerId, 
       String validity, 
@@ -100,7 +314,7 @@ class Response {
     _offerItems = offerItems;
 }
 
-  Response.fromJson(dynamic json) {
+  Offers_list.fromJson(dynamic json) {
     _id = json["id"];
     _offerId = json["offer_id"];
     _validity = json["validity"];
@@ -137,12 +351,12 @@ class Response {
 
 }
 
-/// item_name : "BLAZER/JACKET"
-/// item_price : "12.00"
+/// item_name : "DRESS"
+/// item_price : "5.00"
 /// item_qty : "2"
-/// total_price : "24.00"
-/// billable_qty : "2"
-/// billable_price : "24.00"
+/// total_price : "10.00"
+/// billable_qty : "1"
+/// billable_price : "5.00"
 
 class Offer_items {
   String _itemName;

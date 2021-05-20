@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:tlt_manager/helper/libraries/liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:tlt_manager/ui/exports/helpers.dart';
 import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
+import 'package:tlt_manager/webservices/response_models/sales_res_model.dart';
 
 class Sale extends StatefulWidget {
   static const String routeName = '/sale';
@@ -12,32 +14,51 @@ class Sale extends StatefulWidget {
 }
 
 class _SaleState extends State<Sale> {
-  TextEditingController controller = TextEditingController();String pickDate = '';
+  TextEditingController controller = TextEditingController();
+  List<Response> _searchResult = [];
+  List<Response> listData = [];
 
   @override
   Widget build(BuildContext context) {
+    apiBloc.fetchSalesApi();
     return Scaffold(
       appBar: AppBarCommon(context, 'Sales'),
       drawer: NavigationDrawer(),
       backgroundColor: Colors.grey[100],
       resizeToAvoidBottomInset: false,
-      body: LiquidPullToRefresh(
-        backgroundColor: Colors.blueAccent,
-        color: Colors.white,
-        onRefresh: () {
-          return Future.delayed(
-            Duration(milliseconds: 700),
-            () {
-              buildUi();
-            },
-          );
+      body: StreamBuilder(
+        stream: apiBloc.salesApi,
+        builder: (context, AsyncSnapshot<SalesResModel> snapshot) {
+          if (snapshot.hasData && snapshot.data.status == 1 && snapshot.data.message == 'Success') {
+            return LiquidPullToRefresh(
+              backgroundColor: Colors.blueAccent,
+              color: Colors.white,
+              onRefresh: () {
+                return Future.delayed(
+                  Duration(milliseconds: 700),
+                  () {
+                    buildUi(snapshot.data.response);
+                  },
+                );
+              },
+              child: buildUi(snapshot.data.response),
+            );
+          } else if (snapshot.hasError) {
+            return SomethingWrongScreen(onTap: () {});
+          } else if (!snapshot.hasData) {
+            return TltProgressbar();
+          } else
+            return NoDataFound(txt: 'No data found', onRefresh: (){
+              setState(() {
+
+              });
+            },);
         },
-        child: buildUi(),
       ),
     );
   }
 
-  Widget buildUi() {
+  Widget buildUi(List<Response> response) {
     //print('----${offerList.length}');
     return Column(
       children: [
@@ -51,7 +72,7 @@ class _SaleState extends State<Sale> {
                 leading: Icon(Icons.search),
                 title: TextField(
                   controller: controller,
-                  decoration: InputDecoration(hintText: 'Search for order id...', border: InputBorder.none),
+                  decoration: InputDecoration(hintText: 'Search for order id, customer name...', border: InputBorder.none),
                   onChanged: onSearchTextChanged,
                 ),
                 trailing: Visibility(
@@ -68,17 +89,31 @@ class _SaleState extends State<Sale> {
             ),
           ),
         ),
-
         Expanded(
           child: SlideInUp(
-            child: SalesListWidget(
-              onTapOnList: () {
-                //Navigator.pushNamed(context, Routes.order_details_screen);
-              },
-              onTapOnBtn: (value) {},
-              onTapOnItems: (index) {
-                showBottomSheetUi();
-              },
+            child: Container(
+              margin: EdgeInsets.only(bottom: 12),
+              //color: Colors.white,
+              child: ListView.builder(
+                  itemCount: _searchResult.length != 0 || controller.text.isNotEmpty ? _searchResult.length : response.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    if (_searchResult.length != 0 || controller.text.isNotEmpty) {
+                      return SalesListWidget(
+                        response: _searchResult,
+                        index: index,
+                        onTapOnList: null,
+                        onRefresh: (){setState(() {});},
+                      );
+                    } else {
+                      listData = response;
+                      return SalesListWidget(
+                        response: response,
+                        index: index,
+                        onTapOnList: null,
+                        onRefresh: (){setState(() {});},
+                      );
+                    }
+                  }),
             ),
           ),
         ),
@@ -87,111 +122,21 @@ class _SaleState extends State<Sale> {
   }
 
   onSearchTextChanged(String text) async {
-    /* _searchResult.clear();
+    _searchResult.clear();
     if (text.isEmpty) {
       setState(() {});
       return;
     }
 
-    listData.forEach((itemDetail) {
-      if (itemDetail.itemName.toLowerCase().contains(text.toLowerCase())){
-        _searchResult.add(itemDetail);
+    listData.forEach((model) {
+      if (model.orderId.toLowerCase().contains(text.toLowerCase()) ||
+          model.customerName.toLowerCase().contains(text.toLowerCase()) ||
+          model.paymentFor.toLowerCase().contains(text.toLowerCase())) {
+        _searchResult.add(model);
         print('----Search List: ${_searchResult.length}');
       }
     });
 
-    setState(() {});*/
-  }
-
-  showBottomSheetUi() {
-    showModalBottomSheet<void>(
-        backgroundColor: Colors.white,
-        context: context,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20.0))),
-        builder: (BuildContext context) {
-          return StatefulBuilder(builder: (BuildContext context, StateSetter state) {
-            return Container(
-              height: 500,
-              //padding: EdgeInsets.only( left: 0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12.0),
-                  topRight: Radius.circular(12.0),
-                ),
-              ),
-
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16, bottom: 16),
-                    child: Text(
-                      "ORDERED ITEM",
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: false,
-                      style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black87),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12, right: 12, bottom: 16),
-                    child: Divider(
-                      height: 1,
-                      thickness: 1,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                  Expanded(
-                    child: ListView.builder(
-                        itemCount: 5,
-                        itemBuilder: (BuildContext context, int index) {
-                          return 5 > 0
-                              ? ExpansionTile(
-                                  title: ExpandedListWidget(
-                                    name: 'Item Name',
-                                    categoryName: '',
-                                    price: '',
-                                    qty: '2',
-                                    image: Strings.imgUrlFirebaseBulkOrder,
-                                  ),
-                                  children: List<Widget>.generate(
-                                    2,
-                                    (i) => ExpandedListWidget(
-                                      name: 'Item Name',
-                                      categoryName: '',
-                                      price: '200',
-                                      qty: '2',
-                                      image: Strings.imgUrlFirebaseBulkOrder,
-                                    ),
-                                  ),
-                                )
-                              : Padding(
-                                  padding: const EdgeInsets.only(left: 16, right: 50),
-                                  child: ExpandedListWidget(
-                                    name: 'Item Name',
-                                    categoryName: '',
-                                    price: '100',
-                                    qty: '2',
-                                    image: Strings.imgUrlFirebaseBulkOrder,
-                                  ),
-                                );
-                        }),
-                  ),
-                  TxtTxtTxtRow(
-                    text1: 'TOTAL',
-                    text2: '05',
-                    text3: '\$100.00',
-                    text1Color: Colors.black87,
-                    text2Color: Colors.black87,
-                    bgColor: Colors.lightBlueAccent.withOpacity(0.3),
-                  ),
-                ],
-              ),
-            );
-          });
-        });
+    setState(() {});
   }
 }

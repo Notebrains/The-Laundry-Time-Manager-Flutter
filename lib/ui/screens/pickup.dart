@@ -3,21 +3,33 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:tlt_manager/helper/extn_fun/common_fun.dart';
 import 'package:tlt_manager/helper/libraries/liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:tlt_manager/ui/exports/helpers.dart';
 import 'package:tlt_manager/ui/exports/routes.dart';
 import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
 import 'package:tlt_manager/ui/widgets/pick_up_list_widget.dart';
+import 'package:tlt_manager/webservices/response_models/pick_up_res_model.dart';
 
 class PickUp extends StatefulWidget {
   static const String routeName = '/pickup';
 
   @override
-  _PickUpState createState() =>  _PickUpState();
+  _PickUpState createState() => _PickUpState();
 }
 
 class _PickUpState extends State<PickUp> {
-  TextEditingController controller =  TextEditingController();
-  String pickDate = '';
+  TextEditingController controller = TextEditingController();
+  String fromDateStr = '', toDateStr = '';
+  DateTime fromDate;
+  DateTime toDate;
+  List<Response> _searchResult = [];
+  List<Response> listData = [];
+
+  @override
+  void initState() {
+    super.initState();
+    apiBloc.fetchPickUpListsApi('', '');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +38,15 @@ class _PickUpState extends State<PickUp> {
       drawer: NavigationDrawer(),
       backgroundColor: Colors.grey[100],
       resizeToAvoidBottomInset: false,
-
       body: LiquidPullToRefresh(
         backgroundColor: Colors.blueAccent,
         color: Colors.white,
-        onRefresh: (){
+        onRefresh: () {
           return Future.delayed(
-            Duration(milliseconds: 700), () {
-            buildUi();
-          },
+            Duration(milliseconds: 700),
+            () {
+              buildUi();
+            },
           );
         },
         child: buildUi(),
@@ -43,42 +55,40 @@ class _PickUpState extends State<PickUp> {
   }
 
   Widget buildUi() {
-    //print('----${offerList.length}');
     return Column(
       children: [
         SlideInDown(
           child: Container(
             height: 60,
             margin: const EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 0.0),
-            child:  Card(
+            child: Card(
               elevation: 1,
-              child:  ListTile(
-                leading:  Icon(Icons.search),
-                title:  TextField(
+              child: ListTile(
+                leading: Icon(Icons.search),
+                title: TextField(
                   controller: controller,
-                  decoration:  InputDecoration(
-                      hintText: 'Search order id, customer name...', border: InputBorder.none),
+                  decoration: InputDecoration(hintText: 'Search order id, customer name...', border: InputBorder.none),
                   onChanged: onSearchTextChanged,
                 ),
-
                 trailing: Visibility(
                   visible: controller.text.isNotEmpty,
-                  child: IconButton(icon: Icon(Icons.cancel_outlined), onPressed: () {
-                    controller.clear();
-                    onSearchTextChanged('');
-                  },),
+                  child: IconButton(
+                    icon: Icon(Icons.cancel_outlined),
+                    onPressed: () {
+                      controller.clear();
+                      onSearchTextChanged('');
+                    },
+                  ),
                 ),
               ),
             ),
           ),
         ),
-
         SlideInLeft(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
               Expanded(
                 flex: 1,
                 child: InkWell(
@@ -92,17 +102,19 @@ class _PickUpState extends State<PickUp> {
                       border: Border.all(color: Colors.grey[300]),
                     ),
                     alignment: Alignment.center,
-                    child: TxtIcRow(txt: pickDate.isEmpty ? '  FROM DATE' : pickDate, txtColor: Colors.black54, txtSize: 14, fontWeight: FontWeight.normal,
-                        icon: Icons.date_range_outlined, icColor: Colors.green),
+                    child: TxtIcRow(
+                        txt: fromDateStr.isEmpty ? '  FROM DATE' : fromDateStr,
+                        txtColor: Colors.black54,
+                        txtSize: 14,
+                        fontWeight: FontWeight.normal,
+                        icon: Icons.date_range_outlined,
+                        icColor: Colors.green),
                   ),
-
-                  onTap: (){
+                  onTap: () {
                     pickDateFromDatePicker();
                   },
                 ),
               ),
-
-
               Expanded(
                 flex: 1,
                 child: InkWell(
@@ -116,79 +128,148 @@ class _PickUpState extends State<PickUp> {
                       border: Border.all(color: Colors.grey[300]),
                     ),
                     alignment: Alignment.center,
-                    child: TxtIcRow(txt: pickDate.isEmpty ? '  TO DATE' : pickDate, txtColor: Colors.black54, txtSize: 14, fontWeight: FontWeight.normal,
-                        icon: Icons.date_range_outlined, icColor: Colors.blueAccent),
+                    child: TxtIcRow(
+                        txt: toDateStr.isEmpty ? '  TO DATE' : toDateStr,
+                        txtColor: Colors.black54,
+                        txtSize: 14,
+                        fontWeight: FontWeight.normal,
+                        icon: Icons.date_range_outlined,
+                        icColor: Colors.blueAccent),
                   ),
-                  onTap: (){
+                  onTap: () {
                     pickDateFromDatePicker();
                   },
                 ),
               ),
-
-
-              Container(
-                height: 40,
-                width: 40,
-                margin: const EdgeInsets.only(bottom: 5, top: 8, left: 4, right: 16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5.0),
-                  border: Border.all(color: Colors.grey[300]),
+              InkWell(
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  margin: const EdgeInsets.only(bottom: 5, top: 8, left: 4, right: 16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5.0),
+                    border: Border.all(color: Colors.grey[300]),
+                  ),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    Icons.arrow_right_alt_outlined,
+                    color: Colors.grey,
+                  ),
                 ),
-                alignment: Alignment.center,
-                child: Icon(Icons.arrow_right_alt_outlined, color: Colors.grey,),
+                onTap: () {
+                  if (fromDateStr.isNotEmpty && toDateStr.isNotEmpty) {
+                    showSnackBar(context, 'Loading data...');
+                    setState(() {
+                      apiBloc.fetchPickUpListsApi(formatDateForServer(fromDate), formatDateForServer(toDate));
+                    });
+                  } else
+                    showToast(context, 'Please select both dates!');
+                },
               ),
-
-
             ],
           ),
         ),
 
-        Expanded(
-          child: SlideInUp(
-            child: PickUpListWidget(
-              onTapOnList: () {
-                //Navigator.pushNamed(context, Routes.order_details_screen);
-              },
-              onTapOnBtn: (value) {},
-              onTapOnItems: (index) {
-                showBottomSheetUi();
-              },
-            ),
-          ),
-        ),
+        StreamBuilder(
+          stream: apiBloc.pickUpListsApi,
+          builder: (context, AsyncSnapshot<PickUpResModel> snapshot) {
+            if (snapshot.hasData && snapshot.data.status == 1 && snapshot.data.message == 'Success') {
+              return buildListUi(snapshot.data.response);
+
+            } else if (snapshot.hasError) {
+              return SomethingWrongScreen(onTap: () {});
+            } else if (!snapshot.hasData) {
+              return TltProgressbar();
+            } else
+              return NoDataFound(txt: 'No data found', onRefresh: (){
+              setState(() {
+
+              });
+            },);
+          },
+        )
       ],
     );
   }
 
-
   onSearchTextChanged(String text) async {
-    /* _searchResult.clear();
+    _searchResult.clear();
     if (text.isEmpty) {
       setState(() {});
       return;
     }
 
-    listData.forEach((itemDetail) {
-      if (itemDetail.itemName.toLowerCase().contains(text.toLowerCase())){
-        _searchResult.add(itemDetail);
+    listData.forEach((model) {
+      if (model.orderId.toLowerCase().contains(text.toLowerCase()) ||
+          model.customerName.toLowerCase().contains(text.toLowerCase()) ||
+          model.driverName.toLowerCase().contains(text.toLowerCase())) {
+        _searchResult.add(model);
         print('----Search List: ${_searchResult.length}');
       }
     });
 
-    setState(() {});*/
+    setState(() {});
   }
 
+  Widget buildListUi(List<Response> response) {
+    //print('----${offerList.length}');
+    return SlideInUp(
+      child: Container(
+        margin: EdgeInsets.only(bottom: 12),
+        child: ListView.builder(
+            itemCount: _searchResult.length != 0 || controller.text.isNotEmpty? _searchResult.length : response.length,
+            itemBuilder: (BuildContext context, int index) {
+              if (_searchResult.length != 0 || controller.text.isNotEmpty) {
+                return PickUpListWidget(
+                  response: _searchResult,
+                  index: index,
+                  onTapOnList: () {
+                    //Navigator.pushNamed(context, Routes.order_details_screen);
+                  },
+                  onTapOnBtn: (value) {},
+                  onTapOnItems: (index) {
+                    showBottomSheetUi();
+                  },
+                  onRefresh: (){
+                    setState(() {
+                    controller.clear();
+                    onSearchTextChanged('');
+                  });},
+                );
+              } else {
+                listData = response;
+                return PickUpListWidget(
+                  response: listData,
+                  index: index,
+                  onTapOnList: () {
+                    //Navigator.pushNamed(context, Routes.order_details_screen);
+                  },
+                  onTapOnBtn: (value) {},
+                  onTapOnItems: (index) {
+                    showBottomSheetUi();
+                  },
+                  onRefresh: (){setState(() {
+                    showSnackBar(context, 'Loading data...');
+                    apiBloc.fetchPickUpListsApi('', '');
+                  });},
+                );
+              }
+            },
+        ),
+      ),
+    );
+  }
 
-  String pickDateFromDatePicker() {
+  void pickDateFromDatePicker() {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      DateTime date = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 1);
+      fromDate = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 1);
       DateTime picked = await showDatePicker(
           context: context,
           initialEntryMode: DatePickerEntryMode.calendar,
-          firstDate: DateTime.now().subtract(Duration(days: 0)),
+          firstDate: DateTime.now().subtract(Duration(days: 15000)),
           lastDate: DateTime(DateTime.now().year + 1),
-          initialDate: date,
+          initialDate: fromDate,
           helpText: 'SELECT DATE',
           // Can be used as title
           cancelText: 'NOT NOW',
@@ -196,21 +277,52 @@ class _PickUpState extends State<PickUp> {
           builder: (context, child) {
             return Theme(
               data: ThemeData(
-                textTheme: TextTheme(bodyText2: TextStyle(color: Colors.green)),),
+                textTheme: TextTheme(bodyText2: TextStyle(color: Colors.green)),
+              ),
               child: child,
             );
           });
 
       if (picked != null) {
-        if (picked != null && picked != date)
+        if (picked != null && picked != fromDate)
           setState(() {
-            date = picked;
-            pickDate = formatDateForUs(date);
+            fromDate = picked;
+            fromDateStr = formatDateForUs(fromDate);
           });
       }
     });
+  }
 
-    return pickDate;
+  void pickToDatePicker() {
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      toDate = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 1);
+      DateTime picked = await showDatePicker(
+          context: context,
+          initialEntryMode: DatePickerEntryMode.calendar,
+          firstDate: DateTime.now().subtract(Duration(days: 15000)),
+          lastDate: DateTime(DateTime.now().year + 1),
+          initialDate: toDate,
+          helpText: 'SELECT DATE',
+          // Can be used as title
+          cancelText: 'NOT NOW',
+          confirmText: 'CONFIRM',
+          builder: (context, child) {
+            return Theme(
+              data: ThemeData(
+                textTheme: TextTheme(bodyText2: TextStyle(color: Colors.green)),
+              ),
+              child: child,
+            );
+          });
+
+      if (picked != null) {
+        if (picked != null && picked != toDate)
+          setState(() {
+            toDate = picked;
+            toDateStr = formatDateForUs(toDate);
+          });
+      }
+    });
   }
 
   showBottomSheetUi() {
@@ -260,34 +372,34 @@ class _PickUpState extends State<PickUp> {
                         itemBuilder: (BuildContext context, int index) {
                           return 5 > 0
                               ? ExpansionTile(
-                            title: ExpandedListWidget(
-                              name: 'Item Name',
-                              categoryName: '',
-                              price: '',
-                              qty: '2',
-                              image: Strings.imgUrlFirebaseBulkOrder,
-                            ),
-
-                            children: List<Widget>.generate(
-                              2, (i) => ExpandedListWidget(
-                              name: 'Item Name',
-                              categoryName: '',
-                              price: '200',
-                              qty: '2',
-                              image: Strings.imgUrlFirebaseBulkOrder,
-                            ),
-                            ),
-                          )
+                                  title: ExpandedListWidget(
+                                    name: 'Item Name',
+                                    categoryName: '',
+                                    price: '',
+                                    qty: '2',
+                                    image: Strings.imgUrlFirebaseBulkOrder,
+                                  ),
+                                  children: List<Widget>.generate(
+                                    2,
+                                    (i) => ExpandedListWidget(
+                                      name: 'Item Name',
+                                      categoryName: '',
+                                      price: '200',
+                                      qty: '2',
+                                      image: Strings.imgUrlFirebaseBulkOrder,
+                                    ),
+                                  ),
+                                )
                               : Padding(
-                            padding: const EdgeInsets.only(left: 16, right: 50),
-                            child: ExpandedListWidget(
-                              name: 'Item Name',
-                              categoryName: '',
-                              price: '100',
-                              qty: '2',
-                              image: Strings.imgUrlFirebaseBulkOrder,
-                            ),
-                          );
+                                  padding: const EdgeInsets.only(left: 16, right: 50),
+                                  child: ExpandedListWidget(
+                                    name: 'Item Name',
+                                    categoryName: '',
+                                    price: '100',
+                                    qty: '2',
+                                    image: Strings.imgUrlFirebaseBulkOrder,
+                                  ),
+                                );
                         }),
                   ),
                   TxtTxtTxtRow(
@@ -296,7 +408,8 @@ class _PickUpState extends State<PickUp> {
                     text3: '\$100.00',
                     text1Color: Colors.black87,
                     text2Color: Colors.black87,
-                    bgColor: Colors.lightBlueAccent.withOpacity(0.3),),
+                    bgColor: Colors.lightBlueAccent.withOpacity(0.3),
+                  ),
                 ],
               ),
             );

@@ -4,11 +4,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:tlt_manager/models/home_category_model.dart';
+import 'package:tlt_manager/ui/exports/helpers.dart';
 import 'package:tlt_manager/ui/exports/routes.dart';
 import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
 
 class Home extends StatelessWidget {
+  final String name;
+  final email;
+
+  Home({Key key, this.name, this.email}) : super(key: key);
+
   static const String routeName = '/home';
   List<HomeCategoryModel> categoryList = [];
 
@@ -58,7 +64,7 @@ class Home extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Txt(txt: 'IMDADUL HAQUE', txtColor: Colors.blueGrey, txtSize: 22, fontWeight: FontWeight.normal, padding: 0, onTap: null),
+                          Txt(txt: name.toUpperCase(), txtColor: Colors.blueGrey, txtSize: 22, fontWeight: FontWeight.normal, padding: 0, onTap: null),
 
                           Container(
                             padding: const EdgeInsets.fromLTRB(18, 5, 18, 5),
@@ -70,7 +76,7 @@ class Home extends StatelessWidget {
                             child: Txt(txt: 'Manager', txtColor: Colors.white, txtSize: 14, fontWeight: FontWeight.normal, padding: 0, onTap: null),
                           ),
 
-                          TxtIcRow(txt: ' imdadul@gmail.com', txtColor: Colors.blueGrey, txtSize: 14, fontWeight: FontWeight.normal,
+                          TxtIcRow(txt: email, txtColor: Colors.blueGrey, txtSize: 14, fontWeight: FontWeight.normal,
                           icon: Icons.mail_rounded, icColor: Colors.blueGrey.withOpacity(0.8),),
                         ],
                       ),

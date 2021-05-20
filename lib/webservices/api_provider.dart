@@ -85,6 +85,27 @@ class ApiProvider {
     }
   }
 
+  // customer orders
+  Future<OrdersResModel> fetchCustomerOrdersApi(String customerId) async {
+    var requestBody = {
+      'customer_id': customerId,
+    };
+
+    http.Response response = await http.post(
+      Uri.parse(UrlConstants.customer_orders),
+      headers: header,
+      body: requestBody,
+    );
+
+    print('----customer order res :  ${response.body.toString()}');
+
+    if (response.statusCode == 200) {
+      return OrdersResModel.fromJson(json.decode(response.body)); //Return decoded response
+    } else {
+      throw Exception('Failed to load customer order response');
+    }
+  }
+
   // delete_customer
   Future<StatusMsgResModel> fetchDeleteCustomerApi(String customerId) async {
     var requestBody = {
@@ -142,18 +163,22 @@ class ApiProvider {
 
   // get_items
   Future<ProductResModel> fetchItemsApi() async {
-
-    http.Response response = await http.get(
+    var requestBody = {
+      'category': '',
+      'subcategory': '',
+    };
+    http.Response response = await http.post(
       Uri.parse(UrlConstants.get_items),
       headers: header,
+      body: requestBody,
     );
 
-    print('----get_items res :  ${response.body.toString()}');
+    print('---- items res :  ${response.body.toString()}');
 
     if (response.statusCode == 200) {
       return ProductResModel.fromJson(json.decode(response.body)); //Return decoded response
     } else {
-      throw Exception('Failed to load get_items response');
+      throw Exception('Failed to load items response');
     }
   }
 

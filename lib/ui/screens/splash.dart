@@ -45,7 +45,8 @@ class _SplashScreenState extends State<SplashScreen> {
     SharedPreferenceHelper().getUserSavedData().then((sharedPrefUserProfileModel) {
       String userId = sharedPrefUserProfileModel.userId ?? '';
       if(userId != ''){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Home()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) =>
+            Home(name: sharedPrefUserProfileModel.userName, email: sharedPrefUserProfileModel.userEmail,)));
       } else {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LogIn()));
       }

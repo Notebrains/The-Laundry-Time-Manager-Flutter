@@ -1,8 +1,4 @@
-import 'dart:convert';
-
-import 'package:http/src/response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tlt_manager/models/shared_pref_address_model.dart';
 import 'package:tlt_manager/models/shared_pref_user_model.dart';
 
 class SharedPreferenceHelper {

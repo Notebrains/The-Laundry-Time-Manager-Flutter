@@ -82,7 +82,7 @@ class _LogInState extends State<LogIn> {
             preferences: AnimationPreferences(autoPlay: AnimationPlayStates.Forward, duration: Duration(milliseconds: 900)),
           ),
 
-          Align(
+          /*Align(
             alignment: Alignment.centerRight,
             child: SlideInUp(
               child: InkWell(
@@ -110,7 +110,7 @@ class _LogInState extends State<LogIn> {
               ),
               preferences: AnimationPreferences(autoPlay: AnimationPlayStates.Forward, duration: Duration(milliseconds: 1000)),
             ),
-          ),
+          ),*/
           SlideInUp(
             child: BtnBgBlue(
                 text: "SIGN IN",
@@ -171,7 +171,8 @@ class _LogInState extends State<LogIn> {
 
                         SharedPreferenceHelper().getUserCustomerId().then((id) => {
                           SchedulerBinding.instance.addPostFrameCallback((_) {
-                            Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => Home()));
+                            Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) =>
+                                Home(name: snapshot.data.response.name, email: snapshot.data.response.email,)));
                           })
                         });
 

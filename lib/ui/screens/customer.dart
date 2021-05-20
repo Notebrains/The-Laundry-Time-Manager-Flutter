@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:tlt_manager/helper/libraries/liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import 'package:tlt_manager/helper/libraries/star_rating.dart';
 import 'package:tlt_manager/ui/exports/helpers.dart';
 import 'package:tlt_manager/ui/exports/routes.dart';
 import 'package:tlt_manager/ui/exports/screens.dart';
@@ -51,7 +50,7 @@ class _CustomerState extends State<Customer> {
           } else if (!snapshot.hasData) {
             return TltProgressbar();
           } else
-            return NoDataFound(txt: 'No service found');
+            return NoDataFound(txt: 'No data found', onRefresh: (){setState(() {});},);
         },
       ),
     );
@@ -141,13 +140,13 @@ class _CustomerState extends State<Customer> {
                         txtColor: Colors.blueGrey,
                         txtSize: 14,
                         width: 40 * SizeConfig.widthMultiplier,
-                        fontWeight: FontWeight.w600)),
+                        fontWeight: FontWeight.w600),
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8, 3, 5, 0),
                   child: Text(
                     response[index].mobile,
-                    style:
-                    TextStyle(fontFamily: 'Roboto', fontSize: 12, color: Colors.black54, fontWeight: FontWeight.normal),
+                    style: TextStyle(fontFamily: 'Roboto', fontSize: 12, color: Colors.black54, fontWeight: FontWeight.normal),
                   ),
                 ),
                 Padding(
@@ -157,8 +156,6 @@ class _CustomerState extends State<Customer> {
                 ),
               ],
             ),
-
-
 
             InkWell(
               child: Icon(
@@ -204,7 +201,7 @@ class _CustomerState extends State<Customer> {
         ),
       ),
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Orders(screenTitle: 'Customer',)));
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => CustomerDetails(customerId: response[index].id, customerName: response[index].name,)));
       },
     );
   }

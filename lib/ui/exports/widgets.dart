@@ -35,7 +35,6 @@ export '../widgets/ic_txt_btn_column.dart';
 export '../widgets/ic_if_ic.dart';
 export '../widgets/show_snack_bar.dart';
 export '../widgets/snack_bar_with_action_btn.dart';
-export '../widgets/multi_select_dialog.dart';
 export '../widgets/no_data_found_ic_txt.dart';
 export '../widgets/no_data_txt.dart';
 export '../widgets/txt_center.dart';
@@ -54,6 +53,8 @@ export '../widgets/pick_up_list_widget.dart';
 export '../widgets/sales_list_widget.dart';
 export '../widgets/no_internet_widget.dart';
 export '../widgets/dialog_remove_customer.dart';
+export '../widgets/customer_order_details_list_widget.dart';
+
 
 
 

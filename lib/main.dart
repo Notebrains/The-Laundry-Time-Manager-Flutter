@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:tlt_manager/ui/exports/screens.dart';
+import 'package:tlt_manager/ui/screens/offer.dart';
 import 'package:tlt_manager/ui/screens/products.dart';
 import 'package:tlt_manager/ui/screens/reviews.dart';
 import 'package:tlt_manager/ui/screens/sales.dart';
@@ -48,8 +49,8 @@ class MyRootApp extends StatelessWidget {
               //locale: DevicePreview.of(context).locale, // Add the locale here
               //builder: DevicePreview.appBuilder, // Add the builder here
               routes: {
-                Routes.home_screen: (context) => Home(),
-                Routes.offers_screen: (context) => Offers(),
+                Routes.home_screen: (context) => Home(name: '', email: '',),
+                Routes.offers_screen: (context) => OffersZone(),
                 Routes.orders_screen: (context) => Orders(),
                 Routes.pick_up_screen: (context) => PickUp(),
                 Routes.drop_off_screen: (context) => DropOff(),

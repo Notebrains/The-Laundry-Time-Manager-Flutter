@@ -58,6 +58,7 @@ class Response {
   String _dropoffDate;
   String _dropoffTime;
   String _driverName;
+  String _driverMobile;
   String _customerName;
   String _dropoffAddress;
   int _totalItems;
@@ -68,6 +69,7 @@ class Response {
   String get dropoffDate => _dropoffDate;
   String get dropoffTime => _dropoffTime;
   String get driverName => _driverName;
+  String get driverMobile => _driverMobile;
   String get customerName => _customerName;
   String get dropoffAddress => _dropoffAddress;
   int get totalItems => _totalItems;
@@ -79,15 +81,18 @@ class Response {
       String dropoffDate, 
       String dropoffTime, 
       String driverName, 
-      String customerName, 
+      String driverMobile,
+      String customerName,
       String dropoffAddress, 
       int totalItems, 
       String orderAmount, 
-      List<Item_details> itemDetails}){
+      List<Item_details> itemDetails
+  }){
     _orderId = orderId;
     _dropoffDate = dropoffDate;
     _dropoffTime = dropoffTime;
     _driverName = driverName;
+    _driverMobile = driverMobile;
     _customerName = customerName;
     _dropoffAddress = dropoffAddress;
     _totalItems = totalItems;
@@ -100,6 +105,7 @@ class Response {
     _dropoffDate = json["dropoff_date"];
     _dropoffTime = json["dropoff_time"];
     _driverName = json["driver_name"];
+    _driverMobile = json["driver_mobile"];
     _customerName = json["customer_name"];
     _dropoffAddress = json["dropoff_address"];
     _totalItems = json["total_items"];
@@ -118,6 +124,7 @@ class Response {
     map["dropoff_date"] = _dropoffDate;
     map["dropoff_time"] = _dropoffTime;
     map["driver_name"] = _driverName;
+    map["driver_mobile"] = _driverMobile;
     map["customer_name"] = _customerName;
     map["dropoff_address"] = _dropoffAddress;
     map["total_items"] = _totalItems;

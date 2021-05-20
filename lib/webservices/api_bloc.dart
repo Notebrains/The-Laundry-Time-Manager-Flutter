@@ -85,6 +85,15 @@ class ApiBloc {
   }
 
 
+  // Customer order Api
+  final _fetchCustomerOrdersApi = PublishSubject<OrdersResModel>();
+  Stream<OrdersResModel> get customerOrdersApi => _fetchCustomerOrdersApi.stream;
+  fetchCustomerOrdersApi(String customerId) async {
+    OrdersResModel model = await _repository.fetchCustomerOrdersApi(customerId);
+    _fetchCustomerOrdersApi.sink.add(model);
+  }
+
+
   //Delete Customer Api
   final _fetchDeleteCustomerApi = PublishSubject<StatusMsgResModel>();
   Stream<StatusMsgResModel> get deleteCustomerApi => _fetchDeleteCustomerApi.stream;
@@ -122,6 +131,7 @@ class ApiBloc {
     _fetchReview.close();
     _fetchSales.close();
     _fetchDeleteCustomerApi.close();
+    _fetchCustomerOrdersApi.close();
     _fetchPickUpListsApi.close();
     _fetchDropOffListsApi.close();
   }

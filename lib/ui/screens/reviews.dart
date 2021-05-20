@@ -5,6 +5,7 @@ import 'package:tlt_manager/helper/extn_fun/check_network_connection.dart';
 import 'package:tlt_manager/helper/extn_fun/common_fun.dart';
 import 'package:tlt_manager/helper/libraries/star_rating.dart';
 import 'package:tlt_manager/ui/exports/helpers.dart';
+import 'package:tlt_manager/ui/exports/routes.dart';
 import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
 import 'package:tlt_manager/webservices/response_models/reviews_res_model.dart';
@@ -49,7 +50,9 @@ class Review extends StatelessWidget {
           } else if (!snapshot.hasData) {
             return TltProgressbar();
           } else
-            return NoDataFound(txt: 'No data found');
+            return  NoDataFound(txt: 'No data found', onRefresh: (){
+              Navigator.pushReplacementNamed(context, Routes.review_screen);
+            },);
         },
       ),
     );

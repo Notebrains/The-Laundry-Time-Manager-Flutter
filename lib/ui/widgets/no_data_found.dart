@@ -4,7 +4,9 @@ import 'package:tlt_manager/ui/exports/styles.dart';
 
 class NoDataFound extends StatelessWidget{
   final String txt;
-  const NoDataFound({Key key, this.txt}) : super(key: key);
+  final Function onRefresh;
+
+  const NoDataFound({Key key, this.txt, this.onRefresh}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,32 @@ class NoDataFound extends StatelessWidget{
           ),
 
           Padding(
-            padding: const EdgeInsets.only(bottom: 100),
+            padding: const EdgeInsets.only(bottom: 50, top: 5),
             child: Text(txt,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.normal, wordSpacing: 0)),
+                style: TextStyle(color: Colors.grey, fontSize: 20, fontFamily: 'Roboto', fontWeight: FontWeight.normal, wordSpacing: 0),
+            ),
           ),
 
+          InkWell(
+            child: Container(
+              height: 35,
+              width: 150,
+              margin: const EdgeInsets.all(5),
+              padding: const EdgeInsets.fromLTRB(12, 3, 12, 3),
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                //border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              alignment: Alignment.center,
+              child: Text('Refresh',
+                style: TextStyle(fontFamily: 'Roboto', fontSize: 14, color: Colors.black54, fontWeight: FontWeight.normal),
+              ),
+            ),
+
+            onTap: onRefresh,
+          ),
         ],
       ),
     );

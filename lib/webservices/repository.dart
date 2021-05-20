@@ -30,6 +30,8 @@ class Repository {
 
   Future<OrdersResModel> fetchOrdersApi(String fromDate, String toDate) => appApiProvider.fetchOrdersApi( fromDate, toDate);
 
+  Future<OrdersResModel> fetchCustomerOrdersApi(String customerId) => appApiProvider.fetchCustomerOrdersApi(customerId);
+
   Future<StatusMsgResModel> fetchDeleteCustomerApi(String customerId) => appApiProvider.fetchDeleteCustomerApi(customerId);
 
   Future<PickUpResModel> fetchPickUpListsApi(String fromDate, String toDate) => appApiProvider.fetchPickUpListsApi(fromDate, toDate);

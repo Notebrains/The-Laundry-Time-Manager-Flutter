@@ -14,4 +14,5 @@ class UrlConstants{
   static const String get_filter_items = "${_baseUrl}get_filter_items";
   static const String orders = "${_baseUrl}orders";
   static const String filter_orders = "${_baseUrl}filter_orders";
+  static const String customer_orders = "${_baseUrl}customer_orders";
 }
