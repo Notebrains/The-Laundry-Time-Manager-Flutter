@@ -30,37 +30,46 @@ class TxtTxtTxtRow extends StatelessWidget {
         margin: const EdgeInsets.only(left: 16.0, right: 16, top: 2),
 
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              text1,
-              textAlign: TextAlign.start,
-              style:
-              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text1Color),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              softWrap: false,
+            Expanded(
+              flex: 1,
+              child: Text(
+                text1,
+                textAlign: TextAlign.start,
+                style:
+                TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text1Color),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+              ),
             ),
 
-            Text(
-              text2,
-              textAlign: TextAlign.start,
-              style:
-              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text1Color),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              softWrap: false,
+            Expanded(
+              flex: 1,
+              child: Text(
+                text2,
+                textAlign: TextAlign.start,
+                style:
+                TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text1Color),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+              ),
             ),
 
-            Text(
-              text3,
-              textAlign: TextAlign.start,
-              style:
-              TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text2Color),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              softWrap: false,
+            Expanded(
+              flex: 1,
+              child: Text(
+                text3,
+                textAlign: TextAlign.start,
+                style:
+                TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: text2Color),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                softWrap: false,
+              ),
             ),
           ],
         ),

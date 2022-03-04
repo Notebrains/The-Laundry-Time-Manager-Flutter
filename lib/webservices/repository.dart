@@ -7,6 +7,7 @@ import 'package:tlt_manager/webservices/response_models/pick_up_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/product_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/reviews_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/sales_res_model.dart';
+import 'response_models/customer_orders_res_model.dart';
 import 'response_models/login_res_model.dart';
 import 'response_models/status_msg_res_model.dart';
 
@@ -30,13 +31,13 @@ class Repository {
 
   Future<OrdersResModel> fetchOrdersApi(String fromDate, String toDate) => appApiProvider.fetchOrdersApi( fromDate, toDate);
 
-  Future<OrdersResModel> fetchCustomerOrdersApi(String customerId) => appApiProvider.fetchCustomerOrdersApi(customerId);
+  Future<CustomerOrdersResModel> fetchCustomerOrdersApi(String customerId) => appApiProvider.fetchCustomerOrdersApi(customerId);
 
   Future<StatusMsgResModel> fetchDeleteCustomerApi(String customerId) => appApiProvider.fetchDeleteCustomerApi(customerId);
 
   Future<PickUpResModel> fetchPickUpListsApi(String fromDate, String toDate) => appApiProvider.fetchPickUpListsApi(fromDate, toDate);
 
-  Future<DropOffResModel> fetchDropOffListsApi(String fromDate, String toDate) => appApiProvider.fetchDropOffListsApi(fromDate, toDate);
+  Future<PickUpResModel> fetchDropOffListsApi(String fromDate, String toDate) => appApiProvider.fetchDropOffListsApi(fromDate, toDate);
 
 
 }

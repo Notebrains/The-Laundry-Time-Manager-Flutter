@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
-import 'package:tlt_manager/webservices/response_models/orders_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/customer_orders_res_model.dart';
 
 class CustomerOrdersDetailsListWidget extends StatelessWidget {
-  final List<Response> response;
+  final List<Order_details> response;
   final Function(int index) onTapOnList;
   final Function(int index) onTapOnBtn;
   final Function(int index) onTapOnItems;
@@ -31,7 +31,7 @@ class CustomerOrdersDetailsListWidget extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 child: Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(12),
                   margin: const EdgeInsets.only(left: 16, right: 16, top: 5, bottom: 5),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -41,7 +41,7 @@ class CustomerOrdersDetailsListWidget extends StatelessWidget {
                   child: Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Column(
@@ -50,7 +50,7 @@ class CustomerOrdersDetailsListWidget extends StatelessWidget {
                             children: [
                               Txt(
                                   txt: 'ORDER ID - ${response[index].orderId}',
-                                  txtColor: Colors.black54,
+                                  txtColor: Colors.blueGrey,
                                   txtSize: 14,
                                   fontWeight: FontWeight.bold,
                                   padding: 3,
@@ -121,7 +121,7 @@ class CustomerOrdersDetailsListWidget extends StatelessWidget {
                                 margin: const EdgeInsets.only(bottom: 8, top: 5),
                                 padding: const EdgeInsets.fromLTRB(12, 3, 12, 3),
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.green),
+                                  border: Border.all(color: response[index].paymentStatus.toLowerCase() == 'completed'? Colors.green: Colors.blueAccent),
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
                                 alignment: Alignment.center,

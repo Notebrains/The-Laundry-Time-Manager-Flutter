@@ -8,8 +8,6 @@ class OrdersListWidget extends StatelessWidget {
   final List<Response> response;
   final int index;
   final Function(int index) onTapOnList;
-  final Function(int index) onTapOnBtn;
-  final Function(int index) onTapOnItems;
   final Function onRefreshed;
 
   OrdersListWidget({
@@ -17,8 +15,6 @@ class OrdersListWidget extends StatelessWidget {
     @required this.response,
     @required this.index,
     @required this.onTapOnList,
-    @required this.onTapOnBtn,
-    @required this.onTapOnItems,
     @required this.onRefreshed,
   }) : super(key: key);
 
@@ -37,7 +33,7 @@ class OrdersListWidget extends StatelessWidget {
           child: Column(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
@@ -50,19 +46,27 @@ class OrdersListWidget extends StatelessWidget {
                           txtSize: 14,
                           fontWeight: FontWeight.bold,
                           padding: 3,
-                          onTap: null),
+                          onTap: null,
+                      ),
                       TxtWithWidth(
                         txt: response[index].orderDate,
                         txtColor: Colors.black54,
                         txtSize: 14,
-                        fontWeight: FontWeight.normal,width: 40 * SizeConfig.widthMultiplier,
+                        fontWeight: FontWeight.normal,width: 45 * SizeConfig.widthMultiplier,
                       ),
 
                       TxtWithWidth(
                         txt: response[index].orderType,
                         txtColor: Colors.blueAccent,
                         txtSize: 14,
-                        fontWeight: FontWeight.normal,width: 40 * SizeConfig.widthMultiplier,
+                        fontWeight: FontWeight.normal,width: 43 * SizeConfig.widthMultiplier,
+                      ),
+
+                      TxtWithWidth(
+                        txt: '- ${response[index].orderStatus}',
+                        txtColor: Colors.black54,
+                        txtSize: 14,
+                        fontWeight: FontWeight.normal, width: 43 * SizeConfig.widthMultiplier,
                       ),
 
                       Padding(
@@ -71,17 +75,12 @@ class OrdersListWidget extends StatelessWidget {
                           txt: response[index].customerName,
                           txtColor: Colors.black54,
                           txtSize: 16,
-                          fontWeight: FontWeight.normal,width: 40 * SizeConfig.widthMultiplier,
+                          fontWeight: FontWeight.normal,width: 43 * SizeConfig.widthMultiplier,
                         ),
                       ),
-                      /*    TxtWithWidth(
-                                txt: 'Durgapur, Bardawn, WB, 7000045, India',
-                                txtColor: Colors.black54,
-                                txtSize: 14,
-                                fontWeight: FontWeight.normal,width: 40 * SizeConfig.widthMultiplier,
-                              )*/
                     ],
                   ),
+
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +94,6 @@ class OrdersListWidget extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           padding: 5,
                           onTap: () {
-                            onTapOnItems(index);
                           },
                         ),
                       ),
@@ -127,14 +125,14 @@ class OrdersListWidget extends StatelessWidget {
 
                       Container(
                         height: 25,
-                        margin: const EdgeInsets.only(bottom: 8, top: 5),
-                        padding: const EdgeInsets.fromLTRB(12, 3, 12, 3),
+                        margin: const EdgeInsets.only(bottom: 3, top: 5),
+                        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green),
+                          border: Border.all(color: response[index].paymentStatus.toLowerCase() == 'completed'? Colors.green: Colors.blueAccent),
                           borderRadius: BorderRadius.circular(5.0),
                         ),
                         alignment: Alignment.center,
-                        child: Text(response[index].paymentStatus,
+                        child: Text('Payment ${response[index].paymentStatus}',
                           style: TextStyle(fontFamily: 'Roboto', fontSize: 14, color: Colors.black54, fontWeight: FontWeight.normal),
                         ),
                       ),

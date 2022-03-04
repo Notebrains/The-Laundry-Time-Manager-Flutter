@@ -45,8 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
     SharedPreferenceHelper().getUserSavedData().then((sharedPrefUserProfileModel) {
       String userId = sharedPrefUserProfileModel.userId ?? '';
       if(userId != ''){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) =>
-            Home(name: sharedPrefUserProfileModel.userName, email: sharedPrefUserProfileModel.userEmail,)));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => Home()));
       } else {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LogIn()));
       }
@@ -135,9 +134,9 @@ class _SplashScreenState extends State<SplashScreen> {
     var initSetting = InitializationSettings(android: androidInit, iOS: iosInit);
 
     const AndroidNotificationChannel channel = AndroidNotificationChannel(
-      'tlt_driver_channel_id', // id
-      'The laundry time Driver', // title
-      'This notification is from  TLT Driver.', // description
+      'tlt_manager_channel_id', // id
+      'The laundry time manager', // title
+      'This notification is from  TLT Manager.', // description
       importance: Importance.max,
     );
 

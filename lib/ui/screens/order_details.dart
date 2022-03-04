@@ -53,16 +53,8 @@ class OrderDetails extends StatelessWidget {
                       txtSize: 22,
                       fontWeight: FontWeight.normal,
                       padding: 0,
-                      onTap: null),
-
-                  /*TxtIcRow(
-                    txt: 'Durgapur, Bardawn, WB, 7000045, India',
-                    txtColor: Colors.blueGrey,
-                    txtSize: 14,
-                    fontWeight: FontWeight.normal,
-                    icon: Icons.location_history,
-                    icColor: Colors.blueGrey.withOpacity(0.8),
-                  ),*/
+                      onTap: null,
+                  ),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +72,8 @@ class OrderDetails extends StatelessWidget {
                             txtSize: 14,
                             fontWeight: FontWeight.normal,
                             padding: 0,
-                            onTap: null),
+                            onTap: null,
+                        ),
                       ),
                       Container(
                         padding: const EdgeInsets.fromLTRB(18, 5, 18, 5),
@@ -102,19 +95,138 @@ class OrderDetails extends StatelessWidget {
                 ],
               ),
             ),
+
+
+            Visibility(
+              visible: response[position].orderItems.length > 0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 16, bottom: 16),
+                    child: Text(
+                      "ORDERED ITEM",
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: false,
+                      style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black87),
+                    ),
+                  ),
+
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.grey.shade300),
+                    ),
+                    margin: EdgeInsets.only(left: 12, right: 12, bottom: 24),
+                    padding: EdgeInsets.only(bottom: 8, top: 8),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TxtLeftRightRow(
+                          text1: 'Item total',
+                          text2: response[position].itemTotal.toString(),
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Quantity',
+                          text2: response[position].totalItems.toString(),
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Addon charges',
+                          text2: '\$ ${response[position].totalAddonPrice}',
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Discount',
+                          text2: '\$ ${response[position].offerDiscount}',
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        Visibility(
+                          visible: response[position].taxAmount != '0.00',
+                          child: TxtLeftRightRow(
+                            text1: 'Tax amount',
+                            text2: '\$ ${response[position].taxAmount}',
+                            text1Color: Colors.black38,
+                            text2Color: Colors.black38,
+                          ),
+                        ),
+                        Visibility(
+                          visible: response[position].serviceCharge != '0.00',
+                          child: TxtLeftRightRow(
+                            text1: 'Service charges',
+                            text2: '\$ ${response[position].serviceCharge}',
+                            text1Color: Colors.black38,
+                            text2Color: Colors.black38,
+                          ),
+                        ),
+
+                        TxtLeftRightRow(
+                          text1: 'Minimum service fee',
+                          text2: response[position].cutoffCharge,
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Area service fee',
+                          text2: response[position].zipcodeDeliveryCharge,
+                          text1Color: Colors.black38,
+                          text2Color:  Colors.black38,
+                        ),
+
+
+                        TxtLeftRightRow(
+                          text1: response[position].deliveryType == '1' ? 'Regular service fee' : 'Express service fee',
+                          text2: response[position].deliveryCharges == '0.00' ? 'Free' : '\$ ${response[position].deliveryCharges}',
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+
+                        Container(
+                          margin: const EdgeInsets.only(left: 16, right: 12, top: 3, bottom: 3),
+                          height: 1,
+                          width: double.infinity,
+                          color: Colors.grey[300],
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Total payable',
+                          text2: '\$ ${response[position].orderAmount}',
+                          text1Color: Colors.black54,
+                          text2Color: Colors.black54,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+
             Visibility(
               visible: response[position].orderItems.length > 0,
               child: Container(
-                height: response[position].orderItems.length * 85.0,
+                height: response[position].orderItems.length * 67.0,
                 margin: const EdgeInsets.only(bottom: 12),
                 child: ListView.builder(
                     itemCount: response[position].orderItems.length,
+                    padding: EdgeInsets.zero,
+                    physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (BuildContext context, int index) {
                       return response[position].orderItems[index].offerItems.length > 0
                           ? ExpansionTile(
                               title: ExpandedListWidget(
                                 name: response[position].orderItems[index].itemName,
-                                categoryName: '',
+                                categoryName: response[position].orderItems[index].itemFor,
                                 price: response[position].orderItems[index].itemPrice,
                                 qty: response[position].orderItems[index].itemQty,
                                 image: response[position].orderItems[index].itemImage,
@@ -143,17 +255,7 @@ class OrderDetails extends StatelessWidget {
                     }),
               ),
             ),
-            Visibility(
-              visible: response[position].orderItems.length > 0,
-              child: TxtTxtTxtRow(
-                text1: 'Total \$${convertStrToDoubleStr(response[position].totalAmount)}',
-                text2: 'Discount \$${convertStrToDoubleStr(response[position].discountAmount)}',
-                text3: 'Payable \$${convertStrToDoubleStr(response[position].orderAmount)}',
-                text1Color: Colors.black,
-                text2Color: Colors.black,
-                bgColor: Colors.lightBlueAccent.withOpacity(0.2),
-              ),
-            ),
+
             Container(
               width: double.maxFinite,
               margin: const EdgeInsets.fromLTRB(16, 12, 16, 16),
@@ -192,14 +294,16 @@ class OrderDetails extends StatelessWidget {
                     text2Color: Colors.black54,
                     bgColor: Colors.lightBlueAccent.withOpacity(0.1),
                   ),
-                  TxtTxtTxtRow(
-                    text1: 'Address: ${response[position].pickupAddress}',
-                    text2: '',
-                    text3: '',
-                    text1Color: Colors.black54,
-                    text2Color: Colors.black54,
-                    bgColor: Colors.lightBlueAccent.withOpacity(0.1),
+
+                  Container(
+                    color: Colors.lightBlueAccent.withOpacity(0.1),
+                    width: double.maxFinite,
+                    padding: const EdgeInsets.all(10.0),
+                    margin: const EdgeInsets.only(left: 16.0, right: 16, top: 2),
+                    child: Txt(txt: 'Address: ${response[position].pickupAddress}', txtColor:  Colors.black54, txtSize: 14,
+                        fontWeight: FontWeight.normal, padding: 0, onTap: null),
                   ),
+
                   Padding(
                     padding: const EdgeInsets.only(top: 16, left: 16, bottom: 8),
                     child: Txt(
@@ -211,6 +315,7 @@ class OrderDetails extends StatelessWidget {
                       onTap: null,
                     ),
                   ),
+
                   TxtTxtTxtRow(
                     text1: 'Driver name',
                     text2: 'Date',
@@ -219,25 +324,26 @@ class OrderDetails extends StatelessWidget {
                     text2Color: Colors.black54,
                     bgColor: Colors.lightBlueAccent.withOpacity(0.1),
                   ),
-                  TxtTxtTxtRow(
-                    text1: response[position].dropoffDriver,
-                    text2: response[position].dropoffDate,
-                    text3: response[position].dropoffTime,
-                    text1Color: Colors.black54,
-                    text2Color: Colors.black54,
-                    bgColor: Colors.lightBlueAccent.withOpacity(0.1),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      bottom: 12,
-                    ),
+
+                  Visibility(
                     child: TxtTxtTxtRow(
-                      text1: 'Address: ${response[position].dropoffAddress}',
-                      text2: '',
-                      text3: '',
+                      text1: response[position].dropoffDriver,
+                      text2: response[position].dropoffDate,
+                      text3: response[position].dropoffTime,
                       text1Color: Colors.black54,
                       text2Color: Colors.black54,
                       bgColor: Colors.lightBlueAccent.withOpacity(0.1),
+                    ),
+                  ),
+
+                  Container(
+                    color: Colors.lightBlueAccent.withOpacity(0.1),
+                    width: double.maxFinite,
+                    padding: const EdgeInsets.all(10.0),
+                    margin: const EdgeInsets.only(left: 16.0, right: 16, top: 2, bottom: 12),
+                    child: Txt(
+                      txt: 'Address: ${response[position].dropoffAddress}', txtColor:  Colors.black54, txtSize: 14,
+                      fontWeight: FontWeight.normal, padding: 0, onTap: null,
                     ),
                   ),
                 ],

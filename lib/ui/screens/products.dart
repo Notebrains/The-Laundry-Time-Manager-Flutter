@@ -72,7 +72,7 @@ class _ProductState extends State<Product> {
             height: 60,
             margin: const EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 0.0),
             child: Card(
-              elevation: 3,
+              elevation: 2,
               child: ListTile(
                 leading: Icon(Icons.search),
                 title: TextField(
@@ -94,97 +94,7 @@ class _ProductState extends State<Product> {
             ),
           ),
         ),
-        /*
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              flex: 1,
-              child: FadeInLeftBig(
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 40.0,
-                  margin: const EdgeInsets.only(bottom: 5, top: 8, left: 16, right: 4),
-                  decoration: BoxDecoration(
-                      color: Colors.white, borderRadius: BorderRadius.circular(5.0), border: Border.all(color: Colors.grey[400])),
-                  child: DropdownButton<String>(
-                    dropdownColor: Colors.white,
-                    underline: Container(),
-                    hint: Text("Select Cat"),
-                    items: <String>[
-                      'Men Wear',
-                      'Child',
-                    ].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (_) {},
-                  ),
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: FadeInRightBig(
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 40.0,
-                  margin: const EdgeInsets.only(bottom: 5, top: 6, left: 4, right: 16),
-                  decoration: BoxDecoration(
-                      color: Colors.white, borderRadius: BorderRadius.circular(5.0), border: Border.all(color: Colors.grey[400])),
-                  child: DropdownButton<String>(
-                    dropdownColor: Colors.white,
-                    underline: Container(),
-                    hint: Text("Select Subcat"),
-                    items: <String>[
-                      'Half pants',
-                      'Full pants',
-                    ].map((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      );
-                    }).toList(),
-                    onChanged: (_) {
-                      setState(() {
-
-                      });
-                    },
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        Container(
-          alignment: Alignment.center,
-          height: 40.0,
-          margin: const EdgeInsets.only(bottom: 5, top: 5, left: 16, right: 16),
-          decoration:
-              BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5.0), border: Border.all(color: Colors.grey[400])),
-          child: DropdownButton<String>(
-            dropdownColor: Colors.white,
-            underline: Container(),
-            hint: Text("Select Item"),
-            items: _itemDropDownList.map((String value) {
-              return DropdownMenuItem<String>(
-                value: _selectedItem,
-                child: Text(value),
-              );
-            }).toList(),
-            onChanged: (value) {
-              setState(() {
-                _selectedItem = value;
-              });
-            },
-          ),
-        ),
-
-        */
         Expanded(
           child: FadeInUpBig(
             child: Container(

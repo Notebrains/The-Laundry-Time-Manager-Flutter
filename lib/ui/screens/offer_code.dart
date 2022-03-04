@@ -202,7 +202,7 @@ class _OfferCodeState extends State<OfferCode> {
 
                 Padding(
                   padding: const EdgeInsets.only(right: 8),
-                  child: Text( listData[index].discountType == 'Percentage Discount' ? '${listData[index].discountAmount} %\nOFF'
+                  child: Text( listData[index].discountType == 'Percentage Discount' ? '${convertStrToDoubleStrWithZeroDecimal(listData[index].discountAmount)} %\nOFF'
                             : '\$${convertStrToDoubleStr(listData[index].discountAmount)}',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
@@ -216,134 +216,150 @@ class _OfferCodeState extends State<OfferCode> {
     );
   }
 
-
   showBottomSheetUi(List<Customer_details> customerDetails) {
     showModalBottomSheet<void>(
-        backgroundColor: Colors.white,
-        context: context,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20.0))),
-        builder: (BuildContext context) {
-          return StatefulBuilder(builder: (BuildContext context, StateSetter state) {
-            return Container(
-              height: 500,
-              //padding: EdgeInsets.only( left: 0),
-              decoration: BoxDecoration(
-                color: Colors.grey[50],
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12.0),
-                  topRight: Radius.circular(12.0),
-                ),
+      backgroundColor: Colors.white,
+      context: context,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20.0))),
+      builder: (BuildContext context) {
+        return StatefulBuilder(builder: (BuildContext context, StateSetter state) {
+          return Container(
+            height: 500,
+            //padding: EdgeInsets.only( left: 0),
+            decoration: BoxDecoration(
+              color: Colors.grey[50],
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12.0),
+                topRight: Radius.circular(12.0),
               ),
+            ),
 
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16, bottom: 16),
-                    child: Text(
-                      "Number Of Users",
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: false,
-                      style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black87),
-                    ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top: 16, bottom: 16),
+                  child: Text(
+                    "Number Of Users",
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    softWrap: false,
+                    style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black87),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12, right: 12, bottom: 8),
-                    child: Divider(
-                      height: 1,
-                      thickness: 1,
-                      color: Colors.grey[300],
-                    ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 12, right: 12, bottom: 8),
+                  child: Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: Colors.grey[300],
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12, right: 12),
-                      child: ListView.builder(
-                          itemCount: customerDetails.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              margin: EdgeInsets.all(5),
-                              padding: const EdgeInsets.all(12),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 12, right: 12),
+                    child: ListView.builder(
+                        itemCount: customerDetails.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            margin: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                                color: Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(0.05),
                                 borderRadius: BorderRadius.all(Radius.circular(5)),
                                 border: Border.all(
-                                color: Colors.grey[300]
+                                    color: Colors.grey[300]
                                 )
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      top: 4,
-                                    ),
-                                    child: Text(
-                                      customerDetails[index].name,
-                                      textAlign: TextAlign.start,
-                                      style: TextStyle(
-                                          fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 15, color: Colors.black),
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                      softWrap: false,
-                                    ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 4,
                                   ),
-
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 5, right: 5),
-                                    child: Text(
-                                      'Order Id - ${customerDetails[index].orderId}',
-                                      textAlign: TextAlign.start,
-                                      maxLines: 3,
-                                      overflow: TextOverflow.ellipsis,
-                                      softWrap: false,
-                                      style:
-                                      TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black54),
-                                    ),
+                                  child: Text(
+                                    'Name - ${customerDetails[index].name}',
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 15, color: Colors.black),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    softWrap: false,
                                   ),
+                                ),
 
-
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 5, right: 5),
-                                    child: Text(
-                                      'Date - ${customerDetails[index].date}',
-                                      textAlign: TextAlign.start,
-                                      maxLines: 3,
-                                      overflow: TextOverflow.ellipsis,
-                                      softWrap: false,
-                                      style:
-                                      TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black54),
-                                    ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 5, right: 5),
+                                  child: Text(
+                                    'Order Id - ${customerDetails[index].orderId}',
+                                    textAlign: TextAlign.start,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                    softWrap: false,
+                                    style:
+                                    TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black54),
                                   ),
+                                ),
 
-                                  Padding(
+
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 5, right: 5),
+                                  child: Text(
+                                    'Date - ${customerDetails[index].date}',
+                                    textAlign: TextAlign.start,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                    softWrap: false,
+                                    style:
+                                    TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.w500, fontSize: 14, color: Colors.black54),
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    bottom: 2,
+                                    top: 2,
+                                  ),
+                                  child: Text(
+                                    'Mob - ${customerDetails[index].mobile}',
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: Colors.black54),
+                                  ),
+                                ),
+
+                                Visibility(
+                                  visible: customerDetails[index].location.isNotEmpty,
+                                  child: Padding(
                                     padding: const EdgeInsets.only(
                                       bottom: 2,
                                       top: 2,
                                     ),
                                     child: Text(
-                                      customerDetails[index].mobile,
+                                      'Zip code - ${customerDetails[index].location}', //change here
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
                                           fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 14, color: Colors.black54),
                                     ),
                                   ),
-                                ],
-                              ),
-                            );
-                          }),
-                    ),
+                                ),
+                              ],
+                            ),
+                          );
+                        }),
                   ),
-                ],
-              ),
-            );
-          });
+                ),
+              ],
+            ),
+          );
         });
+      },
+    );
   }
 
 }

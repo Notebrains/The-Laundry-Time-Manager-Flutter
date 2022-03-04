@@ -69,7 +69,7 @@ class _OffersZoneState extends State<OffersZone> with SingleTickerProviderStateM
         body: StreamBuilder(
           stream: apiBloc.offerApi,
           builder: (context, AsyncSnapshot<OffersResModel> snapshot) {
-            if (snapshot.hasData && snapshot.data.status == 1 /*&& snapshot.data.response != null*/) {
+            if (snapshot.hasData && snapshot.data.status == 1  && snapshot.data.message != "No data found") {
               return TabBarView(
                 physics: BouncingScrollPhysics(),
                 controller: _controller,

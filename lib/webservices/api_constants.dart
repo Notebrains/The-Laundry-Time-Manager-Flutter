@@ -1,5 +1,9 @@
 class UrlConstants{
-  static const String _baseUrl = 'https://mridayadevstudio.com/tlt_dev/webservice/Manager/';
+  //Demo url
+  //static const String _baseUrl = 'https://mridayadevstudio.com/tlt_dev/webservice/Manager/';
+
+  //Live url
+  static const String _baseUrl = 'https://thelaundrytime.com/webservice/Manager/';
 
   static const String login_url = "${_baseUrl}login";
   static const String update_device_token = "${_baseUrl}update_device_token";

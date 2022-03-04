@@ -61,14 +61,14 @@ class ProductListWidget extends StatelessWidget {
                               TxtWithWidth(
                                 txt: response[index].itemName.toUpperCase(),
                                 txtColor: Colors.black54,
-                                txtSize: 14,
+                                txtSize: 13,
                                 fontWeight: FontWeight.bold,
                                 width: 30 * SizeConfig.widthMultiplier,
                               ),
                               TxtWithWidth(
                                 txt: 'ID - ${response[index].id}',
                                 txtColor: Colors.black54,
-                                txtSize: 14,
+                                txtSize: 13,
                                 fontWeight: FontWeight.normal,
                                 width: 30 * SizeConfig.widthMultiplier,
                               ),
@@ -133,7 +133,7 @@ class ProductListWidget extends StatelessWidget {
                   visible: response[index].priceDetails.length > 0,
                   child: Container(
                     //height: 3.1 * SizeConfig.heightMultiplier,
-                    //width: 22 * SizeConfig.heightMultiplier,
+                    width: 36 * SizeConfig.widthMultiplier,
                     //color: Colors.grey[100],
                     child: SingleChildScrollView(
                       physics: BouncingScrollPhysics(),

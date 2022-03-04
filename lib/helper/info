@@ -1,4 +1,37 @@
 "https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf"
 .
+manager id and pass: shovannandi97@gmail.com
 
+class Offer_items {
+  String _itemName;
+  String _itemQty;
+  String _itemImage;
 
+  String get itemName => _itemName;
+  String get itemQty => _itemQty;
+  String get itemImage => _itemImage;
+
+  Offer_items({
+      String itemName,
+      String itemQty,
+      String itemImage}){
+    _itemName = itemName;
+    _itemQty = itemQty;
+    _itemImage = itemImage;
+}
+
+  Offer_items.fromJson(dynamic json) {
+    _itemName = json["item_name"];
+    _itemQty = json["item_qty"];
+    _itemImage = json["item_image"];
+  }
+
+  Map<String, dynamic> toJson() {
+    var map = <String, dynamic>{};
+    map["item_name"] = _itemName;
+    map["item_qty"] = _itemQty;
+    map["item_image"] = _itemImage;
+    return map;
+  }
+
+}

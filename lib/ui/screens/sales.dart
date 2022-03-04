@@ -41,18 +41,11 @@ class _SaleState extends State<Sale> {
                   },
                 );
               },
-              child: buildUi(snapshot.data.response),
+              child: snapshot.data.response.length > 0 ? buildUi(snapshot.data.response) : NoDataFound(txt: 'No data found', onRefresh: (){setState(() {});},),
             );
-          } else if (snapshot.hasError) {
-            return SomethingWrongScreen(onTap: () {});
           } else if (!snapshot.hasData) {
             return TltProgressbar();
-          } else
-            return NoDataFound(txt: 'No data found', onRefresh: (){
-              setState(() {
-
-              });
-            },);
+          } else return NoDataFound(txt: 'No data found', onRefresh: (){setState(() {});},);
         },
       ),
     );
@@ -91,8 +84,8 @@ class _SaleState extends State<Sale> {
         ),
         Expanded(
           child: SlideInUp(
-            child: Container(
-              margin: EdgeInsets.only(bottom: 12),
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 12),
               //color: Colors.white,
               child: ListView.builder(
                   itemCount: _searchResult.length != 0 || controller.text.isNotEmpty ? _searchResult.length : response.length,
@@ -101,7 +94,7 @@ class _SaleState extends State<Sale> {
                       return SalesListWidget(
                         response: _searchResult,
                         index: index,
-                        onTapOnList: null,
+                        onTapOnList: (){},
                         onRefresh: (){setState(() {});},
                       );
                     } else {
@@ -109,7 +102,7 @@ class _SaleState extends State<Sale> {
                       return SalesListWidget(
                         response: response,
                         index: index,
-                        onTapOnList: null,
+                        onTapOnList: (){},
                         onRefresh: (){setState(() {});},
                       );
                     }

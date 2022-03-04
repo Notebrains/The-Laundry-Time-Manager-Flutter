@@ -27,6 +27,8 @@ void showToast(BuildContext context, String message) {
 
 String convertStrToDoubleStr(String value) => value.isNotEmpty ? double.parse(value).toStringAsFixed(2).toString(): '0';
 
+String convertStrToDoubleStrWithZeroDecimal(String value) => value.isNotEmpty ? double.parse(value).toStringAsFixed(0).toString(): '0';
+
 String formatDateForUs(DateTime date) => new DateFormat("MM-dd-yyyy").format(date);
 
 String formatDateForServer(DateTime date) => new DateFormat("yyyy-MM-dd").format(date);

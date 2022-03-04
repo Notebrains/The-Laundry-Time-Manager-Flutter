@@ -1,6 +1,3 @@
-/// status : 1
-/// message : "Success"
-/// response : [{"order_id":"39429236","dropoff_date":"10 Apr 2021","dropoff_time":"12:00 PM-01:00 PM","driver_name":"Shovon","customer_name":"Tanay Mitra","dropoff_address":"GUAM, 96913, USA","total_items":2,"order_amount":"121.00","item_details":[{"item_for":"Non Offer","item_name":"SMALL WEDDING GOWN","item_image":"http://localhost/laundry_time/uploads/shutterstock_4338919991.png","item_qty":"1","item_price":"110.00","addon_charge":"0.00","item_total":"110.00","addon_details":[],"offer_items":[]},{"item_for":"Non Offer","item_name":"JEANS/DENIM","item_image":"http://localhost/laundry_time/uploads/jeans-denim.png","item_qty":"1","item_price":"12.00","addon_charge":"0.00","item_total":"12.00","addon_details":[],"offer_items":[]}]}]
 
 class DropOffResModel {
   int _status;
@@ -42,16 +39,6 @@ class DropOffResModel {
   }
 
 }
-
-/// order_id : "39429236"
-/// dropoff_date : "10 Apr 2021"
-/// dropoff_time : "12:00 PM-01:00 PM"
-/// driver_name : "Shovon"
-/// customer_name : "Tanay Mitra"
-/// dropoff_address : "GUAM, 96913, USA"
-/// total_items : 2
-/// order_amount : "121.00"
-/// item_details : [{"item_for":"Non Offer","item_name":"SMALL WEDDING GOWN","item_image":"http://localhost/laundry_time/uploads/shutterstock_4338919991.png","item_qty":"1","item_price":"110.00","addon_charge":"0.00","item_total":"110.00","addon_details":[],"offer_items":[]},{"item_for":"Non Offer","item_name":"JEANS/DENIM","item_image":"http://localhost/laundry_time/uploads/jeans-denim.png","item_qty":"1","item_price":"12.00","addon_charge":"0.00","item_total":"12.00","addon_details":[],"offer_items":[]}]
 
 class Response {
   String _orderId;
@@ -130,15 +117,6 @@ class Response {
 
 }
 
-/// item_for : "Non Offer"
-/// item_name : "SMALL WEDDING GOWN"
-/// item_image : "http://localhost/laundry_time/uploads/shutterstock_4338919991.png"
-/// item_qty : "1"
-/// item_price : "110.00"
-/// addon_charge : "0.00"
-/// item_total : "110.00"
-/// addon_details : []
-/// offer_items : []
 
 class Item_details {
   String _itemFor;

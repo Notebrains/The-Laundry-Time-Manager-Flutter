@@ -11,6 +11,7 @@ import 'package:tlt_manager/webservices/response_models/pick_up_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/product_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/reviews_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/sales_res_model.dart';
+import 'response_models/customer_orders_res_model.dart';
 import 'response_models/login_res_model.dart';
 import 'response_models/status_msg_res_model.dart';
 
@@ -86,7 +87,7 @@ class ApiProvider {
   }
 
   // customer orders
-  Future<OrdersResModel> fetchCustomerOrdersApi(String customerId) async {
+  Future<CustomerOrdersResModel> fetchCustomerOrdersApi(String customerId) async {
     var requestBody = {
       'customer_id': customerId,
     };
@@ -100,7 +101,7 @@ class ApiProvider {
     print('----customer order res :  ${response.body.toString()}');
 
     if (response.statusCode == 200) {
-      return OrdersResModel.fromJson(json.decode(response.body)); //Return decoded response
+      return CustomerOrdersResModel.fromJson(json.decode(response.body)); //Return decoded response
     } else {
       throw Exception('Failed to load customer order response');
     }
@@ -246,7 +247,7 @@ class ApiProvider {
 
 
 // drop off list
-  Future<DropOffResModel> fetchDropOffListsApi(String fromDate, String toDate,) async {
+  Future<PickUpResModel> fetchDropOffListsApi(String fromDate, String toDate,) async {
     var requestBody = {
       'from_date': fromDate,
       'to_date': toDate,
@@ -261,7 +262,7 @@ class ApiProvider {
     print('----drop off_lists res :  ${response.body.toString()}');
 
     if (response.statusCode == 200) {
-      return DropOffResModel.fromJson(json.decode(response.body)); //Return decoded response
+      return PickUpResModel.fromJson(json.decode(response.body)); //Return decoded response
     } else {
       throw Exception('Failed to load drop off lists response');
     }

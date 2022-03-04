@@ -41,7 +41,7 @@
 24        android:allowBackup="true"
 24-->/Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/android/app/src/main/AndroidManifest.xml:9:8-34
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.3.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/5f1df8d87fc96577964bdad7e2f15659/core-1.3.0/AndroidManifest.xml:24:18-86
+25-->[androidx.core:core:1.6.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/1d9e6ed21b645ba56a1ff11b7c6dad31/core-1.6.0/AndroidManifest.xml:24:18-86
 26        android:debuggable="true"
 27        android:fullBackupContent="true"
 27-->/Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/android/app/src/main/AndroidManifest.xml:10:8-40
@@ -257,37 +257,37 @@
 148            android:initOrder="99" />
 148-->[:firebase_messaging] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/firebase_messaging/intermediates/library_manifest/debug/AndroidManifest.xml:43:13-35
 149
-150        <activity
-150-->[:url_launcher] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
-151            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-151-->[:url_launcher] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
-152            android:exported="false"
-152-->[:url_launcher] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
-153            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-153-->[:url_launcher] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
-154
-155        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
-155-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-106
-155-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:12:19-103
-156        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver" >
-156-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-20:20
-156-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:13:19-107
-157            <intent-filter>
-157-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-19:29
-158                <action android:name="android.intent.action.BOOT_COMPLETED" />
-158-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-79
-158-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:15:25-76
-159                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-159-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-84
-159-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:16:25-81
-160                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-160-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-82
-160-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:17:25-79
-161                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-161-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-82
-161-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:18:25-79
-162            </intent-filter>
-163        </receiver>
+150        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+150-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-106
+150-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:12:19-103
+151        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver" >
+151-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-20:20
+151-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:13:19-107
+152            <intent-filter>
+152-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-19:29
+153                <action android:name="android.intent.action.BOOT_COMPLETED" />
+153-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-79
+153-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:15:25-76
+154                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+154-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:16:17-84
+154-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:16:25-81
+155                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+155-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:17:17-82
+155-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:17:25-79
+156                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+156-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-82
+156-->[:flutter_local_notifications] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/flutter_local_notifications/intermediates/library_manifest/debug/AndroidManifest.xml:18:25-79
+157            </intent-filter>
+158        </receiver>
+159
+160        <activity
+160-->[:url_launcher] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+161            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+161-->[:url_launcher] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+162            android:exported="false"
+162-->[:url_launcher] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+163            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+163-->[:url_launcher] /Users/kiron/DEV/FLUTTER/OFFICE PROJECTS/Git Projects/The-Laundry-Time-Manager-Flutter/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
 164        <!--
 165             FirebaseMessagingService performs security checks at runtime,
 166             but set to not exported to explicitly avoid allowing another app to call it.
@@ -337,43 +337,43 @@
 191            android:initOrder="100" />
 191-->[com.google.firebase:firebase-common:19.5.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/9b4bd82ae0b47be582d97b97e8ba04ff/jetified-firebase-common-19.5.0/AndroidManifest.xml:31:13-36
 192
-193        <receiver
-193-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:29:9-33:20
-194            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-194-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:30:13-85
-195            android:enabled="true"
-195-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:31:13-35
-196            android:exported="false" >
-196-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:32:13-37
-197        </receiver>
-198
-199        <service
-199-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:35:9-38:40
-200            android:name="com.google.android.gms.measurement.AppMeasurementService"
-200-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:36:13-84
-201            android:enabled="true"
-201-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:37:13-35
-202            android:exported="false" />
-202-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:38:13-37
-203        <service
-203-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:39:9-43:72
-204            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-204-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:40:13-87
-205            android:enabled="true"
-205-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:41:13-35
-206            android:exported="false"
-206-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:42:13-37
-207            android:permission="android.permission.BIND_JOB_SERVICE" />
-207-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:43:13-69
-208
-209        <activity
-209-->[com.google.android.gms:play-services-base:17.0.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/c6e076e160b08df4a1d00c90a94316e9/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-210            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-210-->[com.google.android.gms:play-services-base:17.0.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/c6e076e160b08df4a1d00c90a94316e9/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+193        <activity
+193-->[com.google.android.gms:play-services-base:17.0.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/c6e076e160b08df4a1d00c90a94316e9/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+194            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+194-->[com.google.android.gms:play-services-base:17.0.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/c6e076e160b08df4a1d00c90a94316e9/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+195            android:exported="false"
+195-->[com.google.android.gms:play-services-base:17.0.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/c6e076e160b08df4a1d00c90a94316e9/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+196            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+196-->[com.google.android.gms:play-services-base:17.0.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/c6e076e160b08df4a1d00c90a94316e9/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+197
+198        <receiver
+198-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:29:9-33:20
+199            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+199-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:30:13-85
+200            android:enabled="true"
+200-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:31:13-35
+201            android:exported="false" >
+201-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:32:13-37
+202        </receiver>
+203
+204        <service
+204-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:35:9-38:40
+205            android:name="com.google.android.gms.measurement.AppMeasurementService"
+205-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:36:13-84
+206            android:enabled="true"
+206-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:37:13-35
+207            android:exported="false" />
+207-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:38:13-37
+208        <service
+208-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:39:9-43:72
+209            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+209-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:40:13-87
+210            android:enabled="true"
+210-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:41:13-35
 211            android:exported="false"
-211-->[com.google.android.gms:play-services-base:17.0.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/c6e076e160b08df4a1d00c90a94316e9/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-212            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-212-->[com.google.android.gms:play-services-base:17.0.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/c6e076e160b08df4a1d00c90a94316e9/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+211-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:42:13-37
+212            android:permission="android.permission.BIND_JOB_SERVICE" />
+212-->[com.google.android.gms:play-services-measurement:18.0.2] /Users/kiron/.gradle/caches/transforms-2/files-2.1/e1db1db09dccc9c8e4b429b4802a3f19/jetified-play-services-measurement-18.0.2/AndroidManifest.xml:43:13-69
 213
 214        <meta-data
 214-->[com.google.android.gms:play-services-basement:17.6.0] /Users/kiron/.gradle/caches/transforms-2/files-2.1/d4899345d1f47cced04429f8cb3e7524/jetified-play-services-basement-17.6.0/AndroidManifest.xml:23:9-25:69

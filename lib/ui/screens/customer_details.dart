@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animator/flutter_animator.dart';
-import 'package:tlt_manager/helper/extn_fun/common_fun.dart';
 import 'package:tlt_manager/helper/libraries/liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:tlt_manager/ui/exports/helpers.dart';
-import 'package:tlt_manager/ui/exports/routes.dart';
-import 'package:tlt_manager/ui/exports/screens.dart';
-import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
-import 'package:tlt_manager/webservices/response_models/orders_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/customer_orders_res_model.dart';
 
 class CustomerDetails extends StatefulWidget {
   final String customerId;
   final String customerName;
+  final List<String> addressList;
 
-  const CustomerDetails({Key key, this.customerId, this.customerName}) : super(key: key);
+  const CustomerDetails({Key key, this.customerId, this.customerName, this.addressList}) : super(key: key);
 
   @override
   _OrdersState createState() => _OrdersState();
@@ -32,13 +28,14 @@ class _OrdersState extends State<CustomerDetails> {
   @override
   Widget build(BuildContext context) {
     apiBloc.fetchCustomerOrdersApi(widget.customerId);
+    print('---- customer id: ${widget.customerId}');
     return Scaffold(
       appBar: appBarIcBack(context, '${widget.customerName} Order'),
       backgroundColor: Colors.grey[100],
       resizeToAvoidBottomInset: false,
       body: StreamBuilder(
         stream: apiBloc.customerOrdersApi,
-        builder: (context, AsyncSnapshot<OrdersResModel> snapshot) {
+        builder: (context, AsyncSnapshot<CustomerOrdersResModel> snapshot) {
           if (snapshot.hasData && snapshot.data.status == 1 && snapshot.data.message == 'Success') {
             return LiquidPullToRefresh(
               backgroundColor: Colors.blueAccent,
@@ -58,37 +55,89 @@ class _OrdersState extends State<CustomerDetails> {
           } else if (!snapshot.hasData) {
             return TltProgressbar();
           } else
-            return NoDataFound(txt: 'No data found', onRefresh: (){
-              setState(() {
-
-              });
-            },);
+            return NoDataFound(
+              txt: 'No data found',
+              onRefresh: () {
+                setState(() {});
+              },
+            );
         },
       ),
     );
   }
 
-  Widget buildUi(List<Response> response) {
-    //print('----${offerList.length}');
+  Widget buildUi(Response response) {
     return Column(
       children: [
         Expanded(
+          flex: 1,
+          child: FadeInDown(
+            child: Container(
+              width: double.maxFinite,
+              //height: 300,
+              margin: const EdgeInsets.only(left: 16, right: 16, top: 12),
+              padding: const EdgeInsets.only(bottom: 12, left: 16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5.0),
+                border: Border.all(color: Colors.grey[300]),
+              ),
+
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BounceInDown(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 12),
+                      child: Text(
+                        'Total Spend - \$${response.totalSpent}',
+                        style: TextStyle(fontFamily: 'Roboto', fontSize: 18, color: Colors.blueGrey, letterSpacing: 1.3),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 12, bottom: 2),
+                    child: Text(
+                      'Address',
+                      style: TextStyle(fontFamily: 'Roboto', fontSize: 16, fontWeight: FontWeight.normal, color: Colors.blueGrey),
+                    ),
+                  ),
+
+                  Expanded(
+                    child: ListView.builder(
+                        itemCount: widget.addressList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Txt(
+                            txt: '${index + 1}. ${widget.addressList[index]}',
+                            //change here
+                            txtColor: Colors.black54,
+                            txtSize: 13,
+                            fontWeight: FontWeight.normal,
+                            padding: 3,
+                            onTap: null,
+                          );
+                        }),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+
+        Expanded(
+          flex: 3,
           child: SlideInUp(
             child: CustomerOrdersDetailsListWidget(
-              response: response,
-              onTapOnList: (index) {
-                /*Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => OrderDetails(response: response, position: index),
-                  ),
-                );*/
-              },
+              response: response.orderDetails,
+              onTapOnList: (index) {},
               onTapOnBtn: (value) {},
               onTapOnItems: (index) {
-                showBottomSheetUi(response, index);
+                showBottomSheetUi(response.orderDetails, index);
               },
-              onRefresh: (){setState(() {});},
+              onRefresh: () {
+                setState(() {});
+              },
             ),
           ),
         ),
@@ -96,7 +145,7 @@ class _OrdersState extends State<CustomerDetails> {
     );
   }
 
-  showBottomSheetUi(List<Response> response, int position) {
+  showBottomSheetUi(List<Order_details> response, int position) {
     showModalBottomSheet<void>(
         backgroundColor: Colors.white,
         context: context,
@@ -137,7 +186,7 @@ class _OrdersState extends State<CustomerDetails> {
                               ? ExpansionTile(
                                   title: ExpandedListWidget(
                                     name: response[position].orderItems[index].itemName,
-                                    categoryName: 'Cloth, Men Wear',
+                                    categoryName: '',
                                     price: response[position].orderItems[index].itemPrice,
                                     qty: response[position].orderItems[index].itemQty,
                                     image: response[position].orderItems[index].itemImage,
@@ -146,8 +195,8 @@ class _OrdersState extends State<CustomerDetails> {
                                     response[position].orderItems[index].offerItems.length,
                                     (i) => ExpandedListWidget(
                                       name: response[position].orderItems[index].offerItems[i].itemName,
-                                      categoryName: 'Cloth, Men Wear',
-                                      price: response[position].orderItems[index].itemPrice,
+                                      categoryName: response[position].orderItems[index].itemFor,
+                                      price: '',
                                       qty: response[position].orderItems[index].itemQty,
                                       image: response[position].orderItems[index].itemImage,
                                     ),
@@ -157,7 +206,7 @@ class _OrdersState extends State<CustomerDetails> {
                                   padding: const EdgeInsets.only(left: 16, right: 50),
                                   child: ExpandedListWidget(
                                     name: response[position].orderItems[index].itemName,
-                                    categoryName: 'Cloth, Men Wear',
+                                    categoryName: '',
                                     price: response[position].orderItems[index].itemPrice,
                                     qty: response[position].orderItems[index].itemQty,
                                     image: response[position].orderItems[index].itemImage,

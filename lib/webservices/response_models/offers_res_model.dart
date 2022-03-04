@@ -1,6 +1,6 @@
 /// status : 1
 /// message : "Success"
-/// response : {"offers_list":[{"id":"53","offer_id":"","validity":"2021-05-25","name":"May coupon code","category":"","subcategory":"","price":"30.00","production_type":"Press Only","image":"https://mridayadevstudio.com/tlt_dev/uploads/laundry-tshirt.png","offer_items":[{"item_name":"DRESS","item_price":"5.00","item_qty":"2","total_price":"10.00","billable_qty":"1","billable_price":"5.00"}]},{"id":"52","offer_id":"","validity":"Expired","name":"Wash 2 & Get 1 Wash Free","category":"","subcategory":"","price":"20.00","production_type":"Dry Clean","image":"https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg","offer_items":[{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"},{"item_name":"COAT","item_price":"18.00","item_qty":"1","total_price":"18.00","billable_qty":"0","billable_price":"0.00"}]}],"vouchers_list":[{"id":"4","code":"859988","how_many_user_can_use":"26","no_of_time_use_by_each":"10","total_useable":"260","total_used_by_customers":"1","discount_type":"Percentage Discount","discount_amount":"100.00","cutoff_amount":"25.00","valid_from":"19 May 2021","valid_to":"30 Jun 2021","details":"$100 discount on minimum laundry of $300","status":"Active","expiry_status":"Available","customer_details":[{"date":"19 May 2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]}]}
+/// response : {"offers_list":[{"id":"52","validity":"Expired","name":"Wash 2 & Get 1 Wash Free","category":"MEN'S WEAR","subcategory":"CLOTHING","price":"20.00","production_type":"Dry Clean","image":"https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg","offer_items":[{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"},{"item_name":"COAT","item_price":"18.00","item_qty":"1","total_price":"18.00","billable_qty":"0","billable_price":"0.00"}],"no_of_customers":3,"customers_details":[{"order_id":"38051781","order_date":"04/26/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"},{"order_id":"54594319","order_date":"04/27/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"},{"order_id":"90094836","order_date":"04/29/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"}]},{"id":"53","validity":"2021-05-25","name":"May coupon code","category":"WOMEN'S WEAR","subcategory":"CLOTHING","price":"30.00","production_type":"Press Only","image":"https://mridayadevstudio.com/tlt_dev/uploads/laundry-tshirt.png","offer_items":[{"item_name":"DRESS","item_price":"5.00","item_qty":"2","total_price":"10.00","billable_qty":"1","billable_price":"5.00"}],"no_of_customers":0,"customers_details":[]}],"vouchers_list":[{"id":"4","code":"859988","how_many_user_can_use":"26","no_of_time_use_by_each":"10","total_useable":"260","total_used_by_customers":"1","discount_type":"Percentage Discount","discount_amount":"100.00","cutoff_amount":"25.00","valid_from":"05/19/2021","valid_to":"06/30/2021","details":"$100 discount on minimum laundry of $300","status":"Active","expiry_status":"Available","customer_details":[{"date":"05/19/2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]}]}
 
 class OffersResModel {
   int _status;
@@ -38,8 +38,8 @@ class OffersResModel {
 
 }
 
-/// offers_list : [{"id":"53","offer_id":"","validity":"2021-05-25","name":"May coupon code","category":"","subcategory":"","price":"30.00","production_type":"Press Only","image":"https://mridayadevstudio.com/tlt_dev/uploads/laundry-tshirt.png","offer_items":[{"item_name":"DRESS","item_price":"5.00","item_qty":"2","total_price":"10.00","billable_qty":"1","billable_price":"5.00"}]},{"id":"52","offer_id":"","validity":"Expired","name":"Wash 2 & Get 1 Wash Free","category":"","subcategory":"","price":"20.00","production_type":"Dry Clean","image":"https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg","offer_items":[{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"},{"item_name":"COAT","item_price":"18.00","item_qty":"1","total_price":"18.00","billable_qty":"0","billable_price":"0.00"}]}]
-/// vouchers_list : [{"id":"4","code":"859988","how_many_user_can_use":"26","no_of_time_use_by_each":"10","total_useable":"260","total_used_by_customers":"1","discount_type":"Percentage Discount","discount_amount":"100.00","cutoff_amount":"25.00","valid_from":"19 May 2021","valid_to":"30 Jun 2021","details":"$100 discount on minimum laundry of $300","status":"Active","expiry_status":"Available","customer_details":[{"date":"19 May 2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]}]
+/// offers_list : [{"id":"52","validity":"Expired","name":"Wash 2 & Get 1 Wash Free","category":"MEN'S WEAR","subcategory":"CLOTHING","price":"20.00","production_type":"Dry Clean","image":"https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg","offer_items":[{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"},{"item_name":"COAT","item_price":"18.00","item_qty":"1","total_price":"18.00","billable_qty":"0","billable_price":"0.00"}],"no_of_customers":3,"customers_details":[{"order_id":"38051781","order_date":"04/26/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"},{"order_id":"54594319","order_date":"04/27/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"},{"order_id":"90094836","order_date":"04/29/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"}]},{"id":"53","validity":"2021-05-25","name":"May coupon code","category":"WOMEN'S WEAR","subcategory":"CLOTHING","price":"30.00","production_type":"Press Only","image":"https://mridayadevstudio.com/tlt_dev/uploads/laundry-tshirt.png","offer_items":[{"item_name":"DRESS","item_price":"5.00","item_qty":"2","total_price":"10.00","billable_qty":"1","billable_price":"5.00"}],"no_of_customers":0,"customers_details":[]}]
+/// vouchers_list : [{"id":"4","code":"859988","how_many_user_can_use":"26","no_of_time_use_by_each":"10","total_useable":"260","total_used_by_customers":"1","discount_type":"Percentage Discount","discount_amount":"100.00","cutoff_amount":"25.00","valid_from":"05/19/2021","valid_to":"06/30/2021","details":"$100 discount on minimum laundry of $300","status":"Active","expiry_status":"Available","customer_details":[{"date":"05/19/2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]}]
 
 class Response {
   List<Offers_list> _offersList;
@@ -92,12 +92,12 @@ class Response {
 /// discount_type : "Percentage Discount"
 /// discount_amount : "100.00"
 /// cutoff_amount : "25.00"
-/// valid_from : "19 May 2021"
-/// valid_to : "30 Jun 2021"
+/// valid_from : "05/19/2021"
+/// valid_to : "06/30/2021"
 /// details : "$100 discount on minimum laundry of $300"
 /// status : "Active"
 /// expiry_status : "Available"
-/// customer_details : [{"date":"19 May 2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]
+/// customer_details : [{"date":"05/19/2021","order_id":"62193157","name":"Tanay Mitra","mobile":"9173037592"}]
 
 class Vouchers_list {
   String _id;
@@ -212,7 +212,7 @@ class Vouchers_list {
 
 }
 
-/// date : "19 May 2021"
+/// date : "05/19/2021"
 /// order_id : "62193157"
 /// name : "Tanay Mitra"
 /// mobile : "9173037592"
@@ -222,21 +222,26 @@ class Customer_details {
   String _orderId;
   String _name;
   String _mobile;
+  String _location;
 
   String get date => _date;
   String get orderId => _orderId;
   String get name => _name;
   String get mobile => _mobile;
+  String get location => _location;
 
   Customer_details({
       String date, 
       String orderId, 
       String name, 
-      String mobile}){
+      String mobile,
+      String location,
+  }){
     _date = date;
     _orderId = orderId;
     _name = name;
     _mobile = mobile;
+    _location = location;
 }
 
   Customer_details.fromJson(dynamic json) {
@@ -244,6 +249,7 @@ class Customer_details {
     _orderId = json["order_id"];
     _name = json["name"];
     _mobile = json["mobile"];
+    _location = json["location"];
   }
 
   Map<String, dynamic> toJson() {
@@ -252,25 +258,26 @@ class Customer_details {
     map["order_id"] = _orderId;
     map["name"] = _name;
     map["mobile"] = _mobile;
+    map["location"] = _location;
     return map;
   }
 
 }
 
-/// id : "53"
-/// offer_id : ""
-/// validity : "2021-05-25"
-/// name : "May coupon code"
-/// category : ""
-/// subcategory : ""
-/// price : "30.00"
-/// production_type : "Press Only"
-/// image : "https://mridayadevstudio.com/tlt_dev/uploads/laundry-tshirt.png"
-/// offer_items : [{"item_name":"DRESS","item_price":"5.00","item_qty":"2","total_price":"10.00","billable_qty":"1","billable_price":"5.00"}]
+/// id : "52"
+/// validity : "Expired"
+/// name : "Wash 2 & Get 1 Wash Free"
+/// category : "MEN'S WEAR"
+/// subcategory : "CLOTHING"
+/// price : "20.00"
+/// production_type : "Dry Clean"
+/// image : "https://mridayadevstudio.com/tlt_dev/uploads/demo_image.jpg"
+/// offer_items : [{"item_name":"BLAZER/JACKET","item_price":"12.00","item_qty":"2","total_price":"24.00","billable_qty":"2","billable_price":"24.00"},{"item_name":"COAT","item_price":"18.00","item_qty":"1","total_price":"18.00","billable_qty":"0","billable_price":"0.00"}]
+/// no_of_customers : 3
+/// customers_details : [{"order_id":"38051781","order_date":"04/26/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"},{"order_id":"54594319","order_date":"04/27/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"},{"order_id":"90094836","order_date":"04/29/2021","name":"Tanay Mitra","email":"tanay.sit.it@gmail.com","mobile":"9173037592"}]
 
 class Offers_list {
   String _id;
-  String _offerId;
   String _validity;
   String _name;
   String _category;
@@ -279,9 +286,10 @@ class Offers_list {
   String _productionType;
   String _image;
   List<Offer_items> _offerItems;
+  int _noOfCustomers;
+  List<Customers_details> _customersDetails;
 
   String get id => _id;
-  String get offerId => _offerId;
   String get validity => _validity;
   String get name => _name;
   String get category => _category;
@@ -290,10 +298,11 @@ class Offers_list {
   String get productionType => _productionType;
   String get image => _image;
   List<Offer_items> get offerItems => _offerItems;
+  int get noOfCustomers => _noOfCustomers;
+  List<Customers_details> get customersDetails => _customersDetails;
 
   Offers_list({
       String id, 
-      String offerId, 
       String validity, 
       String name, 
       String category, 
@@ -301,9 +310,10 @@ class Offers_list {
       String price, 
       String productionType, 
       String image, 
-      List<Offer_items> offerItems}){
+      List<Offer_items> offerItems, 
+      int noOfCustomers, 
+      List<Customers_details> customersDetails}){
     _id = id;
-    _offerId = offerId;
     _validity = validity;
     _name = name;
     _category = category;
@@ -312,11 +322,12 @@ class Offers_list {
     _productionType = productionType;
     _image = image;
     _offerItems = offerItems;
+    _noOfCustomers = noOfCustomers;
+    _customersDetails = customersDetails;
 }
 
   Offers_list.fromJson(dynamic json) {
     _id = json["id"];
-    _offerId = json["offer_id"];
     _validity = json["validity"];
     _name = json["name"];
     _category = json["category"];
@@ -330,12 +341,18 @@ class Offers_list {
         _offerItems.add(Offer_items.fromJson(v));
       });
     }
+    _noOfCustomers = json["no_of_customers"];
+    if (json["customers_details"] != null) {
+      _customersDetails = [];
+      json["customers_details"].forEach((v) {
+        _customersDetails.add(Customers_details.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
     var map = <String, dynamic>{};
     map["id"] = _id;
-    map["offer_id"] = _offerId;
     map["validity"] = _validity;
     map["name"] = _name;
     map["category"] = _category;
@@ -346,17 +363,80 @@ class Offers_list {
     if (_offerItems != null) {
       map["offer_items"] = _offerItems.map((v) => v.toJson()).toList();
     }
+    map["no_of_customers"] = _noOfCustomers;
+    if (_customersDetails != null) {
+      map["customers_details"] = _customersDetails.map((v) => v.toJson()).toList();
+    }
     return map;
   }
 
 }
 
-/// item_name : "DRESS"
-/// item_price : "5.00"
+/// order_id : "38051781"
+/// order_date : "04/26/2021"
+/// name : "Tanay Mitra"
+/// email : "tanay.sit.it@gmail.com"
+/// mobile : "9173037592"
+
+class Customers_details {
+  String _orderId;
+  String _orderDate;
+  String _name;
+  String _email;
+  String _mobile;
+  String _location;
+
+  String get orderId => _orderId;
+  String get orderDate => _orderDate;
+  String get name => _name;
+  String get email => _email;
+  String get mobile => _mobile;
+  String get location => _location;
+
+  Customers_details({
+      String orderId, 
+      String orderDate, 
+      String name, 
+      String email, 
+      String mobile,
+      String location,
+  }){
+    _orderId = orderId;
+    _orderDate = orderDate;
+    _name = name;
+    _email = email;
+    _mobile = mobile;
+    _location = location;
+}
+
+  Customers_details.fromJson(dynamic json) {
+    _orderId = json["order_id"];
+    _orderDate = json["order_date"];
+    _name = json["name"];
+    _email = json["email"];
+    _mobile = json["mobile"];
+    _location = json["location"];
+  }
+
+  Map<String, dynamic> toJson() {
+    var map = <String, dynamic>{};
+    map["order_id"] = _orderId;
+    map["order_date"] = _orderDate;
+    map["name"] = _name;
+    map["email"] = _email;
+    map["mobile"] = _mobile;
+    map["location"] = _location;
+    return map;
+  }
+
+}
+
+/// item_name : "BLAZER/JACKET"
+/// item_price : "12.00"
 /// item_qty : "2"
-/// total_price : "10.00"
-/// billable_qty : "1"
-/// billable_price : "5.00"
+/// total_price : "24.00"
+/// billable_qty : "2"
+/// billable_price : "24.00"
 
 class Offer_items {
   String _itemName;

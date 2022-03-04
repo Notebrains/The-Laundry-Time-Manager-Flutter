@@ -92,16 +92,17 @@ class SalesListWidget extends StatelessWidget {
                 ),
                 Container(
                   height: 25,
+                  width: 150,
                   margin: const EdgeInsets.only(bottom: 8, top: 5),
-                  padding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
+                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.green),
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                   alignment: Alignment.center,
                   child: Text(
-                    response[index].transactionStatus,
-                    style: TextStyle(fontFamily: 'Roboto', fontSize: 14, color: Colors.black54, fontWeight: FontWeight.normal),
+                    'Transaction ${response[index].transactionStatus}',
+                    style: TextStyle(fontFamily: 'Roboto', fontSize: 12, color: Colors.black54, fontWeight: FontWeight.normal),
                   ),
                 ),
               ],

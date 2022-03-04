@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">856129408041-o2b9mdbl7fj7e6v37dqovs2vj500hct5.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">856129408041</string>
+    <string name="google_api_key" translatable="false">AIzaSyDe3fWr0jhMHmtR2uxiOBCtUa0YGVbU55A</string>
+    <string name="google_app_id" translatable="false">1:856129408041:android:7ed5cd0850136b9d1d6038</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDe3fWr0jhMHmtR2uxiOBCtUa0YGVbU55A</string>
+    <string name="google_storage_bucket" translatable="false">tlt-driver.appspot.com</string>
+    <string name="project_id" translatable="false">tlt-driver</string>
+</resources>

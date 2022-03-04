@@ -171,8 +171,7 @@ class _LogInState extends State<LogIn> {
 
                         SharedPreferenceHelper().getUserCustomerId().then((id) => {
                           SchedulerBinding.instance.addPostFrameCallback((_) {
-                            Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) =>
-                                Home(name: snapshot.data.response.name, email: snapshot.data.response.email,)));
+                            Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (BuildContext context) => Home()));
                           })
                         });
 

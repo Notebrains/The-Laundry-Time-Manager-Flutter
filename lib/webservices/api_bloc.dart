@@ -1,6 +1,7 @@
 import 'package:rxdart/rxdart.dart';
 import 'package:tlt_manager/ui/exports/helpers.dart';
 import 'package:tlt_manager/webservices/response_models/customer_list_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/customer_orders_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/offers_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/orders_res_model.dart';
 import 'package:tlt_manager/webservices/response_models/pick_up_res_model.dart';
@@ -86,10 +87,10 @@ class ApiBloc {
 
 
   // Customer order Api
-  final _fetchCustomerOrdersApi = PublishSubject<OrdersResModel>();
-  Stream<OrdersResModel> get customerOrdersApi => _fetchCustomerOrdersApi.stream;
+  final _fetchCustomerOrdersApi = PublishSubject<CustomerOrdersResModel>();
+  Stream<CustomerOrdersResModel> get customerOrdersApi => _fetchCustomerOrdersApi.stream;
   fetchCustomerOrdersApi(String customerId) async {
-    OrdersResModel model = await _repository.fetchCustomerOrdersApi(customerId);
+    CustomerOrdersResModel model = await _repository.fetchCustomerOrdersApi(customerId);
     _fetchCustomerOrdersApi.sink.add(model);
   }
 
@@ -112,10 +113,10 @@ class ApiBloc {
 
 
   //DropOff Lists Api
-  final _fetchDropOffListsApi = PublishSubject<DropOffResModel>();
-  Stream<DropOffResModel> get dropOffListsApi => _fetchDropOffListsApi.stream;
+  final _fetchDropOffListsApi = PublishSubject<PickUpResModel>();
+  Stream<PickUpResModel> get dropOffListsApi => _fetchDropOffListsApi.stream;
   fetchDropOffListsApi(String fromDate, String toDate) async {
-    DropOffResModel model = await _repository.fetchDropOffListsApi(fromDate, toDate);
+    PickUpResModel model = await _repository.fetchDropOffListsApi(fromDate, toDate);
     _fetchDropOffListsApi.sink.add(model);
   }
 

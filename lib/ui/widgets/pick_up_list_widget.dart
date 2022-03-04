@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PickUpListWidget extends StatelessWidget {
+  //final List<Response> response;
   final response;
   final int index;
   final Function onTapOnList;
@@ -32,10 +32,10 @@ class PickUpListWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(5.0),
-          border: Border.all(color: Colors.grey[300]),
+          border: Border.all(color: Colors.grey.shade300),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             InkWell(
@@ -49,7 +49,9 @@ class PickUpListWidget extends StatelessWidget {
                       txtSize: 14,
                       fontWeight: FontWeight.bold,
                       padding: 3,
-                      onTap: null),
+                      onTap: null,
+                  ),
+
                   TxtWithWidth(
                     txt: '${response[index].dropoffDate}, ${response[index].dropoffTime}',
                     txtColor: Colors.black54,
@@ -57,13 +59,7 @@ class PickUpListWidget extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                     width: 45 * SizeConfig.widthMultiplier,
                   ),
-                  TxtWithWidth(
-                    txt: 'Premium order',
-                    txtColor: Colors.blueAccent,
-                    txtSize: 14,
-                    fontWeight: FontWeight.normal,
-                    width: 45 * SizeConfig.widthMultiplier,
-                  ),
+
                   Padding(
                     padding: const EdgeInsets.only(top: 5),
                     child: TxtWithWidth(
@@ -80,11 +76,12 @@ class PickUpListWidget extends StatelessWidget {
                     txtSize: 14,
                     fontWeight: FontWeight.normal,
                     width: 45 * SizeConfig.widthMultiplier,
-                  )
+                  ),
                 ],
               ),
               onTap: onTapOnList,
             ),
+
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,7 +109,7 @@ class PickUpListWidget extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(left: 3, top: 5, bottom: 5),
                       child: Text(
-                        '+91 7980363195',
+                        response[index].driverMobile,
                         style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 14, color: Colors.blueGrey),
                         maxLines: 2,
                         softWrap: false,
@@ -122,9 +119,10 @@ class PickUpListWidget extends StatelessWidget {
                   ]),
 
                   onTap: (){
-                    _launchCaller('+91 7980363195');
+                    _launchCaller(response[index].driverMobile);
                   },
                 ),
+
                 Txt(
                   txt: '${response[index].totalItems} items',
                   txtColor: Colors.blueAccent,
@@ -143,7 +141,7 @@ class PickUpListWidget extends StatelessWidget {
                   padding: 3,
                   onTap: null,
                 ),
-                Container(
+                /*Container(
                   height: 25,
                   margin: const EdgeInsets.only(bottom: 8, top: 5),
                   padding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
@@ -156,14 +154,14 @@ class PickUpListWidget extends StatelessWidget {
                     'Status',
                     style: TextStyle(fontFamily: 'Roboto', fontSize: 14, color: Colors.black54, fontWeight: FontWeight.normal),
                   ),
-                ),
+                ),*/
               ],
             ),
           ],
         ),
       );
     } else {
-      return NoDataFound(txt: 'No data found', onRefresh: onRefresh,);
+      return Container();
     }
   }
 

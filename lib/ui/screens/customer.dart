@@ -20,7 +20,7 @@ class _CustomerState extends State<Customer> {
   TextEditingController controller = TextEditingController();
   List<Response> _searchResult = [];
   List<Response> listData = [];
-
+  List<String> addressList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -154,6 +154,15 @@ class _CustomerState extends State<Customer> {
                   child: TxtWithWidth(txt: response[index].email, txtColor: Colors.black54, txtSize: 12,
                       width: 40 * SizeConfig.widthMultiplier, fontWeight: FontWeight.normal),
                 ),
+
+                Visibility(
+                  visible: response[index].postCode.isNotEmpty,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(6, 0, 5, 0), //change here
+                    child: TxtWithWidth(txt: 'Zip code: ${response[index].postCode}', txtColor: Colors.black54, txtSize: 12,
+                        width: 40 * SizeConfig.widthMultiplier, fontWeight: FontWeight.normal),
+                  ),
+                ),
               ],
             ),
 
@@ -201,7 +210,26 @@ class _CustomerState extends State<Customer> {
         ),
       ),
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => CustomerDetails(customerId: response[index].id, customerName: response[index].name,)));
+        /*if (listData[index].address.length > 0) {
+            for(int i = 0; i< listData[index].address.length; i++){
+              addressList.add('${listData[index].address[i].houseName}, ${listData[index].address[i].street}, ${listData[index].address[i].city}, '
+                  '${listData[index].address[i].country}, zip code-${listData[index].address[i].postCode}');
+            }
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
+                CustomerDetails(customerId: response[index].id, customerName: response[index].name, addressList: addressList,),
+            ),
+          );
+        }*/
+        addressList.clear();
+        listData[index].address.forEach((model) {
+          print('---- : ${model.houseName}');
+          addressList.add('${model.houseName}, ${model.street}, ${model.city}, ${model.country}, zip code-${model.postCode}');
+        });
+
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
+            CustomerDetails(customerId: response[index].id, customerName: response[index].name, addressList: addressList,),
+        ),
+        );
       },
     );
   }

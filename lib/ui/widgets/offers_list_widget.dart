@@ -11,7 +11,6 @@ class OffersListWidget extends StatelessWidget {
   final Function onTapOnList;
   final Function onRefresh;
   final Function(int index) onTapOnBtn;
-  final Function(int index) onTapOnItems;
 
   OffersListWidget({
     Key key,
@@ -20,7 +19,6 @@ class OffersListWidget extends StatelessWidget {
     @required this.onRefresh,
     @required this.onTapOnList,
     @required this.onTapOnBtn,
-    @required this.onTapOnItems,
   }) : super(key: key);
 
   @override
@@ -111,6 +109,28 @@ class OffersListWidget extends StatelessWidget {
                       textAlign: TextAlign.start,
                       style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.normal, fontSize: 12, color: Colors.grey[600]),
                     ),
+                  ),
+
+                  InkWell(
+                    child: Container(
+                      height: 25,
+                      width: 90,
+                      margin: const EdgeInsets.fromLTRB(0, 8, 8, 5),
+                      padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                      decoration: BoxDecoration(
+                        //color: Colors.grey[200],
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(3.0),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text('No. of user',
+                        style: TextStyle(fontFamily: 'Roboto', fontSize: 14, color: Colors.black54, fontWeight: FontWeight.normal),
+                      ),
+                    ),
+
+                    onTap: (){
+                      onTapOnBtn(index);
+                    },
                   ),
                 ],
               ),

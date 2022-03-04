@@ -5,7 +5,6 @@ import 'package:tlt_manager/ui/exports/styles.dart';
 class NoDataFound extends StatelessWidget{
   final String txt;
   final Function onRefresh;
-
   const NoDataFound({Key key, this.txt, this.onRefresh}) : super(key: key);
 
   @override
@@ -44,8 +43,9 @@ class NoDataFound extends StatelessWidget{
                 style: TextStyle(fontFamily: 'Roboto', fontSize: 14, color: Colors.black54, fontWeight: FontWeight.normal),
               ),
             ),
-
-            onTap: onRefresh,
+            onTap: (){
+              onRefresh();
+            },
           ),
         ],
       ),

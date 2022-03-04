@@ -4,11 +4,9 @@ import 'package:flutter_animator/flutter_animator.dart';
 import 'package:tlt_manager/helper/extn_fun/common_fun.dart';
 import 'package:tlt_manager/helper/libraries/liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:tlt_manager/ui/exports/helpers.dart';
-import 'package:tlt_manager/ui/exports/routes.dart';
-import 'package:tlt_manager/ui/exports/styles.dart';
 import 'package:tlt_manager/ui/exports/widgets.dart';
 import 'package:tlt_manager/ui/widgets/pick_up_list_widget.dart';
-import 'package:tlt_manager/webservices/response_models/drop_off_res_model.dart';
+import 'package:tlt_manager/webservices/response_models/pick_up_res_model.dart';
 
 class DropOff extends StatefulWidget {
   static const String routeName = '/dropoff';
@@ -95,7 +93,7 @@ class _PickUpState extends State<DropOff> {
                   child: Container(
                     height: 40,
                     margin: const EdgeInsets.only(bottom: 5, top: 8, left: 16, right: 4),
-                    padding: const EdgeInsets.fromLTRB(12, 3, 12, 3),
+                    //padding: const EdgeInsets.fromLTRB(12, 3, 12, 3),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),
@@ -121,7 +119,7 @@ class _PickUpState extends State<DropOff> {
                   child: Container(
                     height: 40,
                     margin: const EdgeInsets.only(bottom: 5, top: 8, left: 4, right: 4),
-                    padding: const EdgeInsets.fromLTRB(12, 3, 12, 3),
+                    //padding: const EdgeInsets.fromLTRB(12, 3, 12, 3),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5.0),
@@ -137,7 +135,7 @@ class _PickUpState extends State<DropOff> {
                         icColor: Colors.blueAccent),
                   ),
                   onTap: () {
-                    pickDateFromDatePicker();
+                    pickToDatePicker();
                   },
                 ),
               ),
@@ -173,19 +171,21 @@ class _PickUpState extends State<DropOff> {
 
         StreamBuilder(
           stream: apiBloc.dropOffListsApi,
-          builder: (context, AsyncSnapshot<DropOffResModel> snapshot) {
-            if (snapshot.hasData && snapshot.data.status == 1 && snapshot.data.message == 'Success') {
+          builder: (context, AsyncSnapshot<PickUpResModel> snapshot) {
+            if (snapshot.hasData && snapshot.data.status == 1 && snapshot.data.message != "No data found") {
               return buildListUi(snapshot.data.response);
-
             } else if (snapshot.hasError) {
               return SomethingWrongScreen(onTap: () {});
             } else if (!snapshot.hasData) {
               return TltProgressbar();
             } else
               return NoDataFound(txt: 'No data found', onRefresh: (){
-              setState(() {
-
-              });
+                fromDateStr = '';
+                toDateStr = '';
+                showSnackBar(context, 'Loading data...');
+                setState(() {
+                  apiBloc.fetchDropOffListsApi('', '');
+                });
             },);
           },
         )
@@ -214,50 +214,52 @@ class _PickUpState extends State<DropOff> {
 
   Widget buildListUi(List<Response> response) {
     //print('----${offerList.length}');
-    return SlideInUp(
-      child: Container(
-        margin: EdgeInsets.only(bottom: 12),
-        child: ListView.builder(
-            itemCount: _searchResult.length != 0 || controller.text.isNotEmpty? _searchResult.length : response.length,
-            itemBuilder: (BuildContext context, int index) {
-              if (_searchResult.length != 0 || controller.text.isNotEmpty) {
-                return PickUpListWidget(
-                  response: _searchResult,
-                  index: index,
-                  onTapOnList: () {
-                    //Navigator.pushNamed(context, Routes.order_details_screen);
-                  },
-                  onTapOnBtn: (value) {},
-                  onTapOnItems: (index) {
-                    showBottomSheetUi();
-                  },
-                  onRefresh: (){setState(() {
-                    controller.clear();
-                    onSearchTextChanged('');
-                  });},
-                );
-              } else {
-                listData = response;
-                return PickUpListWidget(
-                  response: _searchResult,
-                  index: index,
-                  onTapOnList: () {
-                    //Navigator.pushNamed(context, Routes.order_details_screen);
-                  },
-                  onTapOnBtn: (value) {},
-                  onTapOnItems: (index) {
-                    showBottomSheetUi();
-                  },
-                  onRefresh: (){
-                    setState(() {
-                      showSnackBar(context, 'Loading data...');
-                      apiBloc.fetchDropOffListsApi('', '');
-                    });
-                  },
-                );
-              }
+    return Expanded(
+      child: SlideInUp(
+        child: Container(
+          margin: EdgeInsets.only(bottom: 12),
+          child: ListView.builder(
+              itemCount: _searchResult.length != 0 || controller.text.isNotEmpty? _searchResult.length : response.length,
+              itemBuilder: (BuildContext context, int index) {
+                if (_searchResult.length != 0 || controller.text.isNotEmpty) {
+                  return PickUpListWidget(
+                    response: _searchResult,
+                    index: index,
+                    onTapOnList: () {
+                      //Navigator.pushNamed(context, Routes.order_details_screen);
+                    },
+                    onTapOnBtn: (value) {},
+                    onTapOnItems: (index) {
+                      showBottomSheetUi(_searchResult[index].itemDetails, index, _searchResult);
+                    },
+                    onRefresh: (){setState(() {
+                      controller.clear();
+                      onSearchTextChanged('');
+                    });},
+                  );
+                } else {
+                  listData = response;
+                  return PickUpListWidget(
+                    response: listData,
+                    index: index,
+                    onTapOnList: () {
+                      //Navigator.pushNamed(context, Routes.order_details_screen);
+                    },
+                    onTapOnBtn: (value) {},
+                    onTapOnItems: (index) {
+                      showBottomSheetUi(listData[index].itemDetails, index, listData);
+                    },
+                    onRefresh: (){
+                      setState(() {
+                        showSnackBar(context, 'Loading data...');
+                        apiBloc.fetchDropOffListsApi('', '');
+                      });
+                    },
+                  );
+                }
 
-            }),
+              }),
+        ),
       ),
     );
   }
@@ -326,7 +328,7 @@ class _PickUpState extends State<DropOff> {
     });
   }
 
-  showBottomSheetUi() {
+  showBottomSheetUi(List<Item_details> itemDetails, int position, List<Response> listData) {
     showModalBottomSheet<void>(
         backgroundColor: Colors.white,
         context: context,
@@ -334,7 +336,7 @@ class _PickUpState extends State<DropOff> {
         builder: (BuildContext context) {
           return StatefulBuilder(builder: (BuildContext context, StateSetter state) {
             return Container(
-              height: 500,
+              height: 650,
               //padding: EdgeInsets.only( left: 0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -359,57 +361,133 @@ class _PickUpState extends State<DropOff> {
                       style: TextStyle(fontFamily: 'Roboto', fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black87),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12, right: 12, bottom: 16),
-                    child: Divider(
-                      height: 1,
-                      thickness: 1,
-                      color: Colors.grey[300],
+
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.grey.shade300),
+                    ),
+                    margin: EdgeInsets.only(left: 12, right: 12, bottom: 24),
+                    padding: EdgeInsets.only(bottom: 8, top: 8),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TxtLeftRightRow(
+                          text1: 'Item total',
+                          text2: listData[position].itemTotal.toString(),
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Quantity',
+                          text2: listData[position].totalItems.toString(),
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Addon charges',
+                          text2: '\$ ${listData[position].totalAddonPrice}',
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Discount',
+                          text2: '\$ ${listData[position].offerDiscount}',
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        Visibility(
+                          visible: listData[position].taxAmount != '0.00',
+                          child: TxtLeftRightRow(
+                            text1: 'Tax amount',
+                            text2: '\$ ${listData[position].taxAmount}',
+                            text1Color: Colors.black38,
+                            text2Color: Colors.black38,
+                          ),
+                        ),
+                        Visibility(
+                          visible: listData[position].serviceCharge != '0.00',
+                          child: TxtLeftRightRow(
+                            text1: 'Service charges',
+                            text2: '\$ ${listData[position].serviceCharge}',
+                            text1Color: Colors.black38,
+                            text2Color: Colors.black38,
+                          ),
+                        ),
+
+                        TxtLeftRightRow(
+                          text1: 'Minimum service fee',
+                          text2: listData[position].cutoffCharge,
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Area service fee',
+                          text2: listData[position].zipcodeDeliveryCharge,
+                          text1Color: Colors.black38,
+                          text2Color:  Colors.black38,
+                        ),
+
+                        TxtLeftRightRow(
+                          text1: listData[position].deliveryType == '1' ? 'Regular service fee' : 'Express service fee',
+                          text2: listData[position].deliveryCharges == '0.00' ? 'Free' : '\$ ${listData[position].deliveryCharges}',
+                          text1Color: Colors.black38,
+                          text2Color: Colors.black38,
+                        ),
+
+                        Container(
+                          margin: const EdgeInsets.only(left: 16, right: 12, top: 3, bottom: 3),
+                          height: 1,
+                          width: double.infinity,
+                          color: Colors.grey[300],
+                        ),
+                        TxtLeftRightRow(
+                          text1: 'Total payable',
+                          text2: '\$ ${listData[position].orderAmount}',
+                          text1Color: Colors.black54,
+                          text2Color: Colors.black54,
+                        ),
+                      ],
                     ),
                   ),
+
                   Expanded(
                     child: ListView.builder(
-                        itemCount: 5,
+                        itemCount: itemDetails.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return 5 > 0
+                          return itemDetails[index].offerItems.length > 0
                               ? ExpansionTile(
-                            title: ExpandedListWidget(
-                              name: 'Item Name',
-                              categoryName: '',
-                              price: '',
-                              qty: '2',
-                              image: Strings.imgUrlFirebaseBulkOrder,
-                            ),
+                                  title: ExpandedListWidget(
+                                    name: itemDetails[index].itemName,
+                                    categoryName: '',
+                                    price: itemDetails[index].itemPrice,
+                                    qty: itemDetails[index].itemQty,
+                                    image: itemDetails[index].itemImage,
+                                  ),
                             children: List<Widget>.generate(
-                              2,
+                              itemDetails[index].offerItems.length,
                                   (i) => ExpandedListWidget(
-                                name: 'Item Name',
-                                categoryName: '',
-                                price: '200',
-                                qty: '2',
-                                image: Strings.imgUrlFirebaseBulkOrder,
+                                name: itemDetails[index].offerItems[i].itemName,
+                                categoryName: itemDetails[index].itemFor,
+                                price: '',
+                                qty: itemDetails[index].offerItems[i].itemQty,
+                                image: itemDetails[index].offerItems[i].itemImage,
                               ),
                             ),
                           )
                               : Padding(
-                            padding: const EdgeInsets.only(left: 16, right: 50),
-                            child: ExpandedListWidget(
-                              name: 'Item Name',
-                              categoryName: '',
-                              price: '100',
-                              qty: '2',
-                              image: Strings.imgUrlFirebaseBulkOrder,
-                            ),
-                          );
+                                  padding: const EdgeInsets.only(left: 16, right: 16),
+                                  child: ExpandedListWidget(
+                                    name: itemDetails[index].itemName,
+                                    categoryName: '',
+                                    price: itemDetails[index].itemPrice,
+                                    qty: itemDetails[index].itemQty,
+                                    image: itemDetails[index].itemImage,
+                                  ),
+                              );
                         }),
-                  ),
-                  TxtTxtTxtRow(
-                    text1: 'TOTAL',
-                    text2: '05',
-                    text3: '\$100.00',
-                    text1Color: Colors.black87,
-                    text2Color: Colors.black87,
-                    bgColor: Colors.lightBlueAccent.withOpacity(0.3),
                   ),
                 ],
               ),
